@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cierre — El asistente de WhatsApp para asesores inmobiliarios</title>
+<title>Cierre — El asistente de WhatsApp para asesores e inmobiliarias</title>
 <meta name="description" content="Cierre es un asistente de WhatsApp para asesores e inmobiliarias: fichas de propiedades, tasaciones, cuestionarios de visita y posteos para redes, sin instalar nada.">
 <link rel="icon" type="image/png" href="favicon_512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,6 +74,8 @@
   nav.mainnav a{font-weight:600;font-size:14.5px;color:var(--gray);transition:color .15s ease;}
   nav.mainnav a:hover{color:var(--black);}
   .header-actions{display:flex;align-items:center;gap:12px;}
+  .social-icon{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;color:var(--gray);transition:color .15s ease,background .15s ease;}
+  .social-icon:hover{color:var(--black);background:var(--bg-soft);}
   .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
   .menu-toggle span{display:block;width:22px;height:2px;background:var(--black);margin:5px 0;border-radius:2px;}
 
@@ -130,6 +132,12 @@
     padding:28px 22px;transition:border-color .15s ease, transform .15s ease;
   }
   .product-card:hover{border-color:var(--black);transform:translateY(-3px);}
+  .product-card-featured{border-color:var(--black);position:relative;}
+  .badge-featured{
+    display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.02em;
+    background:linear-gradient(100deg,var(--green),var(--blue));color:#fff;
+    padding:4px 10px;border-radius:999px;margin-bottom:14px;
+  }
   .product-icon{
     width:44px;height:44px;border-radius:12px;
     display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px;
@@ -152,10 +160,19 @@
   .step p{font-size:14px;color:var(--gray);}
 
   /* Final CTA */
-  .cta-final{text-align:center;}
-  .cta-final .wrap{max-width:560px;}
+  .cta-final .wrap{
+    max-width:var(--max);
+    display:flex;align-items:center;justify-content:space-between;gap:40px;
+    background:var(--bg-soft);border-radius:24px;padding:56px 60px;
+  }
   .cta-final h2{font-size:clamp(24px,3.4vw,32px);}
-  .cta-final p{margin:14px 0 30px;color:var(--gray);font-size:16px;}
+  .cta-final p{margin:14px 0 26px;color:var(--gray);font-size:16px;}
+  .cta-final .qr-block{
+    flex:none;display:flex;flex-direction:column;align-items:center;gap:10px;
+    background:#fff;border-radius:18px;border:1px solid var(--border);padding:20px 24px;
+  }
+  .cta-final .qr-block img{width:132px;height:132px;}
+  .cta-final .qr-block span{font-size:12.5px;color:var(--gray);text-align:center;max-width:150px;}
 
   /* Footer */
   footer{border-top:1px solid var(--border);padding:50px 0 26px;}
@@ -183,6 +200,8 @@
     .benefits-media{aspect-ratio:16/9;}
     .products-grid{grid-template-columns:repeat(2,1fr);}
     .steps{grid-template-columns:1fr;}
+    .cta-final .wrap{flex-direction:column;text-align:center;padding:44px 28px;}
+    .cta-final .qr-block{margin:0 auto;}
   }
   @media (max-width:760px){
     nav.mainnav{display:none;}
@@ -209,6 +228,9 @@
       </ul>
     </nav>
     <div class="header-actions">
+      <a class="social-icon" href="https://instagram.com/cierreaiprop" target="_blank" rel="noopener" aria-label="Instagram de Cierre">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+      </a>
       <a class="btn btn-outline btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Cierre" target="_blank" rel="noopener">Contacto</a>
       <a class="btn btn-primary btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
     </div>
@@ -222,7 +244,7 @@
     <div class="wrap">
       <div>
         <span class="eyebrow"><span class="accent-dot"></span> Para asesores e inmobiliarias</span>
-        <h1>El asistente de WhatsApp para asesores inmobiliarios</h1>
+        <h1>El asistente de WhatsApp para asesores e inmobiliarias</h1>
         <p class="lead">Cierre arma fichas de propiedades, tasaciones, cuestionarios de visita y posteos para redes directamente en tu WhatsApp. Sin apps, sin instalar nada.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
@@ -247,7 +269,7 @@
   <section class="benefits">
     <div class="wrap">
       <div class="benefits-media">
-        <img src="https://images.unsplash.com/photo-1763036731377-bfcb2193d435?auto=format&fit=crop&w=900&q=80" alt="Edificio de departamentos moderno">
+        <img src="https://images.unsplash.com/photo-1595986630530-969786b19b4d?auto=format&fit=crop&w=900&q=80" alt="Persona usando el celular para escribir por WhatsApp">
       </div>
       <div>
         <span class="eyebrow">Por qué usarlo</span>
@@ -296,17 +318,18 @@
         <div class="product-card">
           <div class="product-icon">📄</div>
           <h3>Ficha de propiedad</h3>
-          <p>Convertí el link de un aviso en una ficha con tus datos de contacto, lista para enviar por WhatsApp o descargar en PDF.</p>
+          <p>Pasás el link de cualquier aviso (sea tuyo o de un colega) y Cierre arma una ficha prolija con tus datos de contacto, foto y descripción, lista para enviar por WhatsApp o descargar en PDF.</p>
         </div>
         <div class="product-card">
           <div class="product-icon">💰</div>
           <h3>Tasador con IA</h3>
-          <p>Respondé un cuestionario guiado y recibí una tasación con comparables reales de la zona.</p>
+          <p>Respondé un cuestionario guiado sobre la propiedad y recibí en minutos una tasación con comparables reales de la zona, lista para mostrarle al propietario.</p>
         </div>
-        <div class="product-card">
+        <div class="product-card product-card-featured">
+          <span class="badge-featured">Distintivo de Cierre</span>
           <div class="product-icon">📋</div>
-          <h3>Cuestionario post-visita</h3>
-          <p>Cierre le manda al comprador unas preguntas sobre la visita y te junta las respuestas en un resumen.</p>
+          <h3>Seguimiento post-visita</h3>
+          <p>A las 48 horas de una visita, Cierre le escribe automáticamente al comprador con preguntas armadas por IA según esa propiedad puntual, y te junta las respuestas en un resumen por WhatsApp. Vos no tenés que acordarte de hacer el seguimiento: lo hace Cierre solo.</p>
         </div>
         <div class="product-card">
           <div class="product-icon">📱</div>
@@ -345,9 +368,15 @@
 
   <section id="contacto">
     <div class="cta-final wrap">
-      <h2>¿Querés empezar a usar Cierre?</h2>
-      <p>Escribinos por WhatsApp y arrancá directamente desde ahí.</p>
-      <a class="btn btn-primary" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <div>
+        <h2>¿Querés empezar a usar Cierre?</h2>
+        <p>Escribinos por WhatsApp y arrancá directamente desde ahí.</p>
+        <a class="btn btn-primary" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+      <div class="qr-block">
+        <img src="qr_whatsapp.png" alt="Código QR para escribirle a Cierre por WhatsApp">
+        <span>Escaneá con la cámara de tu celular para abrir el chat</span>
+      </div>
     </div>
   </section>
 
@@ -384,6 +413,7 @@
           <h4>Contacto</h4>
           <ul>
             <li><a href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Cierre" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://instagram.com/cierreaiprop" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
       </div>
