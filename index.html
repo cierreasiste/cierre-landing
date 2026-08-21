@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cierre — El asistente de WhatsApp para asesores inmobiliarios</title>
+<meta name="description" content="Cierre es un asistente de WhatsApp para asesores e inmobiliarias: fichas de propiedades, tasaciones, cuestionarios de visita y posteos para redes, sin instalar nada.">
+<link rel="icon" type="image/png" href="favicon_512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#0bcb75;
+    --blue:#00608a;
+    --black:#0a0a0a;
+    --gray:#5a5a5a;
+    --gray-light:#8a8a8a;
+    --bg-soft:#f7f7f6;
+    --border:#e7e7e5;
+    --radius:14px;
+    --max:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--black);
+    background:#ffffff;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand-word{
+    font-family:'Baloo 2',system-ui,sans-serif;
+    font-weight:700;
+    line-height:1.18;
+    color:var(--black);
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  ul{list-style:none;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:15.5px;
+    padding:14px 26px;border-radius:999px;
+    border:none;cursor:pointer;transition:opacity .15s ease, transform .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{opacity:.88;}
+  .btn-primary{
+    background:var(--black);
+    color:#fff;
+  }
+  .btn-outline{
+    background:transparent;color:var(--black);border:1.5px solid var(--border);
+  }
+  .btn-outline:hover{border-color:var(--black);opacity:1;}
+  .btn-sm{padding:10px 20px;font-size:14px;}
+  .accent-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--green),var(--blue));display:inline-block;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .logo-lockup{height:30px;}
+  nav.mainnav ul{display:flex;gap:32px;align-items:center;}
+  nav.mainnav a{font-weight:600;font-size:14.5px;color:var(--gray);transition:color .15s ease;}
+  nav.mainnav a:hover{color:var(--black);}
+  .header-actions{display:flex;align-items:center;gap:12px;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--black);margin:5px 0;border-radius:2px;}
+
+  /* Hero */
+  .hero{padding:72px 0 90px;}
+  .hero .wrap{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+  }
+  .eyebrow{
+    font-size:13px;font-weight:700;letter-spacing:.04em;
+    color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:8px;
+  }
+  .hero h1{font-size:clamp(30px,4vw,46px);letter-spacing:-.5px;}
+  .hero p.lead{margin:22px 0 0;font-size:17px;color:var(--gray);max-width:480px;}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-media{
+    border-radius:20px;overflow:hidden;position:relative;
+    aspect-ratio:4/5;
+  }
+  .hero-media img{width:100%;height:100%;object-fit:cover;}
+
+  /* Section shell */
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin:0 0 44px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(24px,3.4vw,32px);}
+  .section-head p{margin-top:14px;color:var(--gray);font-size:16px;}
+
+  /* Qué es */
+  .about{background:var(--bg-soft);}
+  .about .wrap{max-width:760px;text-align:center;}
+  .about .eyebrow{justify-content:center;}
+  .about p.body{font-size:18px;color:var(--black);line-height:1.75;}
+  .about p.body + p.body{margin-top:16px;color:var(--gray);font-size:16px;}
+
+  /* Benefits split */
+  .benefits .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
+  .benefits-media{border-radius:20px;overflow:hidden;aspect-ratio:1/1;}
+  .benefits-media img{width:100%;height:100%;object-fit:cover;}
+  .benefit-list{display:flex;flex-direction:column;gap:26px;margin-top:30px;}
+  .benefit-item{display:flex;gap:16px;align-items:flex-start;}
+  .benefit-icon{
+    width:34px;height:34px;border-radius:10px;flex:none;
+    background:linear-gradient(135deg,var(--green),var(--blue));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:700;
+  }
+  .benefit-item h3{font-size:16.5px;margin-bottom:4px;}
+  .benefit-item p{font-size:14.5px;color:var(--gray);}
+
+  /* Products */
+  .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .product-card{
+    border:1px solid var(--border);border-radius:var(--radius);
+    padding:28px 22px;transition:border-color .15s ease, transform .15s ease;
+  }
+  .product-card:hover{border-color:var(--black);transform:translateY(-3px);}
+  .product-icon{
+    width:44px;height:44px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px;
+    background:var(--bg-soft);
+  }
+  .product-card h3{font-size:17.5px;margin-bottom:8px;}
+  .product-card p{font-size:14px;color:var(--gray);}
+
+  /* How it works */
+  .how{background:var(--bg-soft);}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .step{background:#fff;border-radius:var(--radius);padding:30px 24px;border:1px solid var(--border);}
+  .step .num{
+    width:34px;height:34px;border-radius:10px;
+    background:var(--black);color:#fff;
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:16px;
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .step h3{font-size:16.5px;margin-bottom:6px;}
+  .step p{font-size:14px;color:var(--gray);}
+
+  /* Final CTA */
+  .cta-final{text-align:center;}
+  .cta-final .wrap{max-width:560px;}
+  .cta-final h2{font-size:clamp(24px,3.4vw,32px);}
+  .cta-final p{margin:14px 0 30px;color:var(--gray);font-size:16px;}
+
+  /* Footer */
+  footer{border-top:1px solid var(--border);padding:50px 0 26px;}
+  .footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;}
+  .footer-brand{max-width:280px;}
+  .footer-brand-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .footer-brand-row img{width:30px;height:30px;}
+  .footer-brand-row .brand-word{font-size:19px;}
+  .footer-brand p{font-size:13.5px;color:var(--gray-light);}
+  .footer-cols{display:flex;gap:56px;flex-wrap:wrap;}
+  .footer-col h4{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-light);margin-bottom:14px;}
+  .footer-col ul li{margin-bottom:9px;}
+  .footer-col a{font-size:14px;color:var(--gray);transition:color .15s ease;}
+  .footer-col a:hover{color:var(--black);}
+  .footer-bottom{
+    padding-top:22px;border-top:1px solid var(--border);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-size:12.5px;color:var(--gray-light);
+  }
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-media{order:-1;aspect-ratio:16/10;}
+    .benefits .wrap{grid-template-columns:1fr;}
+    .benefits-media{aspect-ratio:16/9;}
+    .products-grid{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:1fr;}
+  }
+  @media (max-width:760px){
+    nav.mainnav{display:none;}
+    .menu-toggle{display:block;}
+    .header-actions .btn-outline{display:none;}
+    .products-grid{grid-template-columns:1fr;}
+    .footer-top{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" aria-label="Cierre">
+      <img class="logo-lockup" src="logo_horizontal_transparent.png" alt="Cierre">
+    </a>
+    <nav class="mainnav">
+      <ul>
+        <li><a href="#que-es">Qué es</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Cierre" target="_blank" rel="noopener">Contacto</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+    <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><span class="accent-dot"></span> Para asesores e inmobiliarias</span>
+        <h1>El asistente de WhatsApp para asesores inmobiliarios</h1>
+        <p class="lead">Cierre arma fichas de propiedades, tasaciones, cuestionarios de visita y posteos para redes directamente en tu WhatsApp. Sin apps, sin instalar nada.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a class="btn btn-outline" href="#que-es">Ver qué es Cierre</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1737442886747-9fb768b96ed2?auto=format&fit=crop&w=900&q=80" alt="Persona sosteniendo la llave de una propiedad">
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="que-es">
+    <div class="wrap">
+      <span class="eyebrow">Qué es Cierre</span>
+      <h2 style="margin-bottom:20px;">Un chat de WhatsApp que hace el trabajo administrativo por vos</h2>
+      <p class="body">Cierre es un asistente al que le escribís desde WhatsApp. No hay que crear una cuenta ni instalar nada: elegís qué necesitás y te devuelve el resultado en segundos, listo para usar.</p>
+      <p class="body">Está pensado para el trabajo del día a día de un asesor inmobiliario o una inmobiliaria: tasar una propiedad, armar la ficha de un aviso, generar un posteo para redes o juntar la opinión de un comprador después de una visita.</p>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="wrap">
+      <div class="benefits-media">
+        <img src="https://images.unsplash.com/photo-1763036731377-bfcb2193d435?auto=format&fit=crop&w=900&q=80" alt="Edificio de departamentos moderno">
+      </div>
+      <div>
+        <span class="eyebrow">Por qué usarlo</span>
+        <h2>Menos tiempo en tareas administrativas, más tiempo vendiendo</h2>
+        <div class="benefit-list">
+          <div class="benefit-item">
+            <div class="benefit-icon">1</div>
+            <div>
+              <h3>Ahorra tiempo</h3>
+              <p>Tareas que antes llevaban minutos u horas se resuelven en segundos, sin salir del chat.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">2</div>
+            <div>
+              <h3>No requiere instalar nada</h3>
+              <p>Funciona en el WhatsApp que ya usás todos los días, desde el celular o la computadora.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">3</div>
+            <div>
+              <h3>Imagen más profesional</h3>
+              <p>Fichas, tasaciones y posteos con tu marca y tus datos de contacto, listos para compartir.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">4</div>
+            <div>
+              <h3>Todo en un solo lugar</h3>
+              <p>Lo que necesitás para vender una propiedad, centralizado en una sola conversación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow" style="justify-content:center;">Productos</span>
+        <h2>Qué podés hacer con Cierre</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon">📄</div>
+          <h3>Ficha de propiedad</h3>
+          <p>Convertí el link de un aviso en una ficha con tus datos de contacto, lista para enviar por WhatsApp o descargar en PDF.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">💰</div>
+          <h3>Tasador con IA</h3>
+          <p>Respondé un cuestionario guiado y recibí una tasación con comparables reales de la zona.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">📋</div>
+          <h3>Cuestionario post-visita</h3>
+          <p>Cierre le manda al comprador unas preguntas sobre la visita y te junta las respuestas en un resumen.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">📱</div>
+          <h3>Post para redes</h3>
+          <p>Generá una imagen lista para publicar en Instagram o Facebook, con los datos de la propiedad y tu marca.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="como-funciona">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow" style="justify-content:center;">Cómo funciona</span>
+        <h2>Tres pasos, todo desde el chat</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Le escribís a Cierre</h3>
+          <p>Guardás el número de WhatsApp y arrancás la conversación cuando quieras.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Elegís lo que necesitás</h3>
+          <p>Un menú simple te ofrece las opciones: tasar, armar una ficha, enviar el cuestionario de visita o crear un posteo.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Recibís tu resultado</h3>
+          <p>En segundos te llega el archivo o la imagen lista, con tu marca y tus datos de contacto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="cta-final wrap">
+      <h2>¿Querés empezar a usar Cierre?</h2>
+      <p>Escribinos por WhatsApp y arrancá directamente desde ahí.</p>
+      <a class="btn btn-primary" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-row">
+          <img src="icon_transparent.png" alt="">
+          <span class="brand-word">Cierre</span>
+        </div>
+        <p>Asistente de WhatsApp para asesores e inmobiliarias.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="#productos">Ficha de propiedad</a></li>
+            <li><a href="#productos">Tasador con IA</a></li>
+            <li><a href="#productos">Cuestionario post-visita</a></li>
+            <li><a href="#productos">Post para redes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Cierre</h4>
+          <ul>
+            <li><a href="#que-es">Qué es Cierre</a></li>
+            <li><a href="#como-funciona">Cómo funciona</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Cierre" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cierre. Todos los derechos reservados.</span>
+      <span>Buenos Aires, Argentina</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
