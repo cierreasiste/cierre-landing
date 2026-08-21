@@ -233,6 +233,20 @@
     .products-grid{grid-template-columns:1fr;}
     .footer-top{flex-direction:column;}
   }
+
+  /* FAQ */
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{border:1px solid var(--border);border-radius:var(--radius);padding:4px 24px;background:#fff;}
+  .faq-item summary{
+    cursor:pointer;list-style:none;padding:20px 0;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:15.5px;color:var(--black);
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";font-size:22px;font-weight:400;color:var(--gray-light);flex:none;}
+  .faq-item[open] summary::after{content:"\2013";}
+  .faq-item p{padding:0 0 20px;color:var(--gray);font-size:14.5px;line-height:1.7;}
+  .faq-note{margin-top:28px;text-align:center;font-size:13.5px;color:var(--gray);}
 </style>
 </head>
 <body>
@@ -248,6 +262,7 @@
         <li><a href="#productos">Productos</a></li>
         <li><a href="#planes">Planes</a></li>
         <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -375,8 +390,8 @@
       <div class="pricing-grid">
         <div class="price-card">
           <h3>Base</h3>
-          <div class="price-value"><span class="amount">$9.000</span><span class="period">/mes</span></div>
-          <p class="price-annual-note">O <strong>$6.300/mes</strong> pagando el plan anual (30% off)</p>
+          <div class="price-value"><span class="amount">$7.900</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">O <strong>$5.500/mes</strong> pagando el plan anual (30% off)</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 40 fichas de propiedad por mes</li>
             <li><span class="check">✓</span> 15 tasaciones con IA por mes</li>
@@ -389,8 +404,8 @@
         <div class="price-card price-card-popular">
           <span class="badge-featured">Más elegido</span>
           <h3>Popular</h3>
-          <div class="price-value"><span class="amount">$10.500</span><span class="period">/mes</span></div>
-          <p class="price-annual-note">O <strong>$7.400/mes</strong> pagando el plan anual (30% off)</p>
+          <div class="price-value"><span class="amount">$9.700</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">O <strong>$6.800/mes</strong> pagando el plan anual (30% off)</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 100 fichas de propiedad por mes</li>
             <li><span class="check">✓</span> 35 tasaciones con IA por mes</li>
@@ -402,8 +417,8 @@
 
         <div class="price-card">
           <h3>Top</h3>
-          <div class="price-value"><span class="amount">$36.000</span><span class="period">/mes</span></div>
-          <p class="price-annual-note">O <strong>$25.000/mes</strong> pagando el plan anual (30% off)</p>
+          <div class="price-value"><span class="amount">$33.000</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">O <strong>$23.000/mes</strong> pagando el plan anual (30% off)</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 250 fichas de propiedad por mes</li>
             <li><span class="check">✓</span> 80 tasaciones con IA por mes</li>
@@ -441,6 +456,42 @@
           <p>En segundos te llega el archivo o la imagen lista, con tu marca y tus datos de contacto.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow" style="justify-content:center;">Preguntas frecuentes</span>
+        <h2>Todo lo que necesitás saber antes de empezar</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Cómo funciona Cierre?</summary>
+          <p>Le escribís al número de WhatsApp de Cierre, elegís una opción del menú (Tasador, Ficha, Visita o Post) y completás los datos que te va pidiendo el chat. En segundos recibís el resultado listo para usar, con tu marca y tus datos de contacto.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo probar Cierre antes de pagar?</summary>
+          <p>Sí. Podés usar cada uno de los cuatro productos una vez gratis, sin dejar tarjeta ni suscribirte a nada. Si te sirve, ahí elegís el plan que más se ajuste a tu volumen de trabajo.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué portales son compatibles con la Ficha de propiedad?</summary>
+          <p>Por ahora funciona con links de Zonaprop y Argenprop, los portales más usados en Argentina. Vamos sumando más a medida que lo necesitan los asesores que lo usan.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué pasa si me quedo sin cupos en el mes?</summary>
+          <p>Los cupos se renuevan automáticamente en cada ciclo de facturación. Si los usás todos antes de que termine el mes, podés esperar a la renovación o escribirnos por WhatsApp para pasarte a un plan con más cupo en el momento.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo cancelar cuando quiera?</summary>
+          <p>Sí. Cierre no hace débito automático: cada mes te llega el link de pago por WhatsApp y vos decidís si renovás. Si no pagás, tu cuenta simplemente queda en pausa hasta que quieras volver a activarla.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Mis datos y los de mis clientes están seguros?</summary>
+          <p>Sí. Tu información se guarda en una base de datos privada a la que solo accedés vos desde tu WhatsApp, y no se comparte con terceros.</p>
+        </details>
+      </div>
+      <p class="faq-note">¿Tenés otra pregunta? <a href="https://wa.me/5491124832755?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20Cierre" target="_blank" rel="noopener" style="color:var(--black);font-weight:700;text-decoration:underline;">Escribinos por WhatsApp</a>.</p>
     </div>
   </section>
 
@@ -486,6 +537,7 @@
             <li><a href="#que-es">Qué es Cierre</a></li>
             <li><a href="#planes">Planes</a></li>
             <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
           </ul>
         </div>
         <div class="footer-col">
