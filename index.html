@@ -146,6 +146,28 @@
   .product-card h3{font-size:17.5px;margin-bottom:8px;}
   .product-card p{font-size:14px;color:var(--gray);}
 
+  /* Pricing */
+  .pricing{background:var(--bg-soft);}
+  .pricing-toggle{display:flex;align-items:center;justify-content:center;gap:10px;margin:-8px 0 40px;font-size:14px;color:var(--gray);}
+  .pricing-toggle .tag-off{background:linear-gradient(100deg,var(--green),var(--blue));color:#fff;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:999px;}
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;}
+  .price-card{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+    padding:32px 26px;display:flex;flex-direction:column;
+  }
+  .price-card-popular{border-color:var(--black);position:relative;}
+  .price-card h3{font-size:18px;}
+  .price-value{margin:18px 0 2px;display:flex;align-items:baseline;gap:6px;}
+  .price-value .amount{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.5px;}
+  .price-value .period{font-size:14px;color:var(--gray);}
+  .price-annual-note{font-size:13px;color:var(--gray);margin-bottom:22px;}
+  .price-annual-note strong{color:var(--black);}
+  .plan-features{list-style:none;display:flex;flex-direction:column;gap:11px;margin:0 0 26px;flex:1;}
+  .plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--black);}
+  .plan-features li span.check{flex:none;color:var(--green);font-weight:700;}
+  .price-card .btn{width:100%;justify-content:center;}
+  .pricing-note{margin-top:32px;text-align:center;font-size:13.5px;color:var(--gray);}
+
   /* How it works */
   .how{background:var(--bg-soft);}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -199,6 +221,7 @@
     .benefits .wrap{grid-template-columns:1fr;}
     .benefits-media{aspect-ratio:16/9;}
     .products-grid{grid-template-columns:repeat(2,1fr);}
+    .pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}
     .steps{grid-template-columns:1fr;}
     .cta-final.wrap{flex-direction:column;text-align:center;padding:44px 28px;}
     .cta-final .qr-block{margin:0 auto;}
@@ -223,6 +246,7 @@
       <ul>
         <li><a href="#que-es">Qué es</a></li>
         <li><a href="#productos">Productos</a></li>
+        <li><a href="#planes">Planes</a></li>
         <li><a href="#como-funciona">Cómo funciona</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -340,6 +364,60 @@
     </div>
   </section>
 
+  <section class="pricing" id="planes">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow" style="justify-content:center;">Planes</span>
+        <h2>Un plan para cada volumen de trabajo</h2>
+        <p>Todos los planes incluyen los cuatro productos de Cierre. La diferencia es cuánto podés usar cada uno por mes.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Base</h3>
+          <div class="price-value"><span class="amount">$9.000</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">O <strong>$6.300/mes</strong> pagando el plan anual (30% off)</p>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 40 fichas de propiedad por mes</li>
+            <li><span class="check">✓</span> 15 tasaciones con IA por mes</li>
+            <li><span class="check">✓</span> 15 cuestionarios post-visita por mes</li>
+            <li><span class="check">✓</span> 15 posteos para redes por mes</li>
+          </ul>
+          <a class="btn btn-outline" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20contratar%20el%20plan%20Base%20de%20Cierre" target="_blank" rel="noopener">Elegir Base</a>
+        </div>
+
+        <div class="price-card price-card-popular">
+          <span class="badge-featured">Más elegido</span>
+          <h3>Popular</h3>
+          <div class="price-value"><span class="amount">$10.500</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">O <strong>$7.400/mes</strong> pagando el plan anual (30% off)</p>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 100 fichas de propiedad por mes</li>
+            <li><span class="check">✓</span> 35 tasaciones con IA por mes</li>
+            <li><span class="check">✓</span> 30 cuestionarios post-visita por mes</li>
+            <li><span class="check">✓</span> 30 posteos para redes por mes</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20contratar%20el%20plan%20Popular%20de%20Cierre" target="_blank" rel="noopener">Elegir Popular</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Top</h3>
+          <div class="price-value"><span class="amount">$36.000</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">O <strong>$25.000/mes</strong> pagando el plan anual (30% off)</p>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 250 fichas de propiedad por mes</li>
+            <li><span class="check">✓</span> 80 tasaciones con IA por mes</li>
+            <li><span class="check">✓</span> 100 cuestionarios post-visita por mes</li>
+            <li><span class="check">✓</span> 100 posteos para redes por mes</li>
+          </ul>
+          <a class="btn btn-outline" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20contratar%20el%20plan%20Top%20de%20Cierre" target="_blank" rel="noopener">Elegir Top</a>
+        </div>
+      </div>
+
+      <p class="pricing-note">¿No estás seguro de qué plan te conviene? Escribinos por WhatsApp y te ayudamos a elegir.</p>
+    </div>
+  </section>
+
   <section class="how" id="como-funciona">
     <div class="wrap">
       <div class="section-head center">
@@ -406,6 +484,7 @@
           <h4>Cierre</h4>
           <ul>
             <li><a href="#que-es">Qué es Cierre</a></li>
+            <li><a href="#planes">Planes</a></li>
             <li><a href="#como-funciona">Cómo funciona</a></li>
           </ul>
         </div>
