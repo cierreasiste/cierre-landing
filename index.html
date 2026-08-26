@@ -641,7 +641,7 @@
       var anual = Number(el.dataset.anual);
       var amountEl = el.querySelector('.amount');
       var strikeEl = el.previousElementSibling;
-      var noteEl = el.parentElement.querySelector('.price-annual-note');
+      var noteEl = el.closest('.price-card').querySelector('.price-annual-note');
       if(isAnual){
         amountEl.textContent = fmt(anual);
         if(strikeEl) strikeEl.textContent = fmt(mensual);
