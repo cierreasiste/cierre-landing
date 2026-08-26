@@ -162,6 +162,8 @@
   .price-value .period{font-size:14px;color:var(--gray);}
   .price-annual-note{font-size:13px;color:var(--gray);margin-bottom:22px;}
   .price-annual-note strong{color:var(--black);}
+  .price-strike{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--gray-light);text-decoration:line-through;text-decoration-color:var(--gray-light);margin:16px 0 -6px;min-height:19px;}
+  .price-strike:empty{visibility:hidden;}
   .pricing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin:4px 0 40px;flex-wrap:wrap;}
   .toggle-label{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;color:var(--gray-light);transition:color .2s;cursor:pointer;user-select:none;}
   .toggle-label.active{color:var(--black);}
@@ -420,6 +422,7 @@
       <div class="pricing-grid">
         <div class="price-card">
           <h3>Base</h3>
+          <span class="price-strike"></span>
           <div class="price-value" data-mensual="7900" data-anual="5500"><span class="amount">$7.900</span><span class="period">/mes</span></div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
@@ -434,6 +437,7 @@
         <div class="price-card price-card-popular">
           <span class="badge-featured">Más elegido</span>
           <h3>Popular</h3>
+          <span class="price-strike"></span>
           <div class="price-value" data-mensual="9700" data-anual="6800"><span class="amount">$9.700</span><span class="period">/mes</span></div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
@@ -447,6 +451,7 @@
 
         <div class="price-card">
           <h3>Top</h3>
+          <span class="price-strike"></span>
           <div class="price-value" data-mensual="33000" data-anual="23000"><span class="amount">$33.000</span><span class="period">/mes</span></div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
@@ -489,6 +494,7 @@
       <div class="pricing-grid">
         <div class="price-card" data-of-plan="base">
           <h3>Oficina Base</h3>
+          <span class="price-strike"></span>
           <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
@@ -503,6 +509,7 @@
         <div class="price-card price-card-popular" data-of-plan="popular">
           <span class="badge-featured">Más elegido</span>
           <h3>Oficina Popular</h3>
+          <span class="price-strike"></span>
           <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
@@ -516,6 +523,7 @@
 
         <div class="price-card" data-of-plan="top">
           <h3>Oficina Top</h3>
+          <span class="price-strike"></span>
           <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
@@ -678,14 +686,15 @@
       var mensual = Number(el.dataset.mensual);
       var anual = Number(el.dataset.anual);
       var amountEl = el.querySelector('.amount');
+      var strikeEl = el.previousElementSibling;
       var noteEl = el.parentElement.querySelector('.price-annual-note');
       if(isAnual){
         amountEl.textContent = fmt(anual);
-        var total = anual * 12;
-        var ahorro = (mensual - anual) * 12;
-        noteEl.innerHTML = 'Total <strong>' + fmt(total) + '</strong> el año — ahorrás <strong>' + fmt(ahorro) + '</strong>';
+        if(strikeEl) strikeEl.textContent = fmt(mensual);
+        noteEl.textContent = 'Facturado anualmente';
       } else {
         amountEl.textContent = fmt(mensual);
+        if(strikeEl) strikeEl.textContent = '';
         noteEl.textContent = 'Facturado mes a mes';
       }
     });
@@ -747,15 +756,17 @@
       var mensual = plan.a + plan.b * n;
       var anual = mensual * 0.7;
       var amountEl = card.querySelector('.amount');
+      var priceValueEl = card.querySelector('.price-value');
+      var strikeEl = priceValueEl ? priceValueEl.previousElementSibling : null;
       var noteEl = card.querySelector('.price-annual-note');
 
       if(isAnual){
         amountEl.textContent = fmt(anual);
-        var total = anual * 12;
-        var ahorro = (mensual - anual) * 12;
-        noteEl.innerHTML = 'Total <strong>' + fmt(total) + '</strong> el año — ahorrás <strong>' + fmt(ahorro) + '</strong>';
+        if(strikeEl) strikeEl.textContent = fmt(mensual);
+        noteEl.textContent = 'Facturado anualmente';
       } else {
         amountEl.textContent = fmt(mensual);
+        if(strikeEl) strikeEl.textContent = '';
         noteEl.textContent = 'Facturado mes a mes';
       }
 
