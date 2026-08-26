@@ -139,6 +139,7 @@
 
   /* Incluye (checklist de dos columnas) */
   .incluye-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .incluye-cols-single{grid-template-columns:1fr;max-width:560px;margin:0 auto;}
   .incluye-col{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px 26px;}
   .incluye-col h3{font-size:16.5px;margin-bottom:18px;}
   .incluye-list{display:flex;flex-direction:column;gap:13px;}
@@ -338,7 +339,7 @@
       <div class="section-head center">
         <span class="eyebrow" style="justify-content:center;">¿Qué gana tu inmobiliaria?</span>
         <h2>Esto es lo que Cierre le suma a tu oficina</h2>
-        <p>Lo marcado como "Ya funciona" está disponible hoy. Lo marcado como "Próximamente" es lo próximo que estamos construyendo para el plan Oficina.</p>
+        <p>Todo esto ya está funcionando y disponible para tu equipo hoy.</p>
       </div>
       <div class="products-grid oficinas-benefits">
         <div class="product-card">
@@ -377,11 +378,11 @@
           <h3>Marca de oficina en cada ficha y posteo</h3>
           <p>El logo y los datos de tu inmobiliaria en todo lo que generan tus agentes. Lo cargás una sola vez y queda para todo el equipo.</p>
         </div>
-        <div class="product-card is-soon">
-          <span class="badge-soon">Próximamente</span>
+        <div class="product-card">
+          <span class="badge-featured">Ya funciona</span>
           <div class="product-icon">🗺️</div>
           <h3>Mapa de propiedades del equipo</h3>
-          <p>Vista geográfica de todo lo que está cargando tu equipo, para detectar superposiciones de zona.</p>
+          <p>Vista geográfica de todo lo que está cargando tu equipo, para detectar superposiciones de zona. Lo ves directo desde el panel del dueño.</p>
         </div>
       </div>
     </div>
@@ -393,7 +394,7 @@
         <span class="eyebrow" style="justify-content:center;">Tu plan Oficina</span>
         <h2>Todo lo que incluye</h2>
       </div>
-      <div class="incluye-cols">
+      <div class="incluye-cols incluye-cols-single">
         <div class="incluye-col">
           <h3>Disponible hoy</h3>
           <ul class="incluye-list done">
@@ -405,12 +406,7 @@
             <li><span class="mark">✓</span> Panel web para el dueño o gerente, con visibilidad y ranking de agentes</li>
             <li><span class="mark">✓</span> Login web por WhatsApp para entrar al panel sin usuario ni contraseña</li>
             <li><span class="mark">✓</span> Marca de tu inmobiliaria en las fichas y posteos que arma el equipo</li>
-          </ul>
-        </div>
-        <div class="incluye-col">
-          <h3>En camino</h3>
-          <ul class="incluye-list soon">
-            <li><span class="mark">◷</span> Mapa con las propiedades cargadas por todo el equipo</li>
+            <li><span class="mark">✓</span> Mapa con las propiedades cargadas por todo el equipo</li>
           </ul>
         </div>
       </div>
