@@ -170,6 +170,17 @@
   .toggle-knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .2s;}
   .toggle-switch[aria-checked="true"] .toggle-knob{left:25px;}
   .toggle-badge{background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.3px;}
+  .oficinas{background:var(--bg-soft);}
+  .agent-calc{max-width:340px;margin:0 auto 32px;text-align:center;}
+  .agent-calc label{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;margin-bottom:10px;}
+  .agent-calc input{
+    width:100%;text-align:center;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:26px;
+    padding:12px;border:1.5px solid var(--border);border-radius:var(--radius);background:#fff;
+  }
+  .agent-calc input:focus{outline:none;border-color:var(--green);}
+  .agent-calc .agent-min{font-size:12.5px;color:var(--gray-light);margin-top:6px;}
+  .price-card .plan-quota{color:var(--gray);}
+
 
   .plan-features{list-style:none;display:flex;flex-direction:column;gap:11px;margin:0 0 26px;flex:1;}
   .plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--black);}
@@ -270,6 +281,7 @@
         <li><a href="#que-es">Qué es</a></li>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#planes">Planes</a></li>
+        <li><a href="#oficinas">Oficinas</a></li>
         <li><a href="#como-funciona">Cómo funciona</a></li>
         <li><a href="#faq">Preguntas frecuentes</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -451,6 +463,75 @@
     </div>
   </section>
 
+  <section class="pricing oficinas" id="oficinas">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow" style="justify-content:center;">Oficinas</span>
+        <h2>¿Sos dueño o gerente de una inmobiliaria?</h2>
+        <p>Sumá a todo tu equipo con un cupo compartido entre agentes, en vez de pagar por cada uno por separado. Arrancás con solo 3 agentes.</p>
+      </div>
+
+      <div class="agent-calc">
+        <label for="cantAgentes">¿Cuántos agentes tiene tu oficina?</label>
+        <input type="number" id="cantAgentes" min="3" step="1" value="3">
+        <p class="agent-min">Mínimo 3 agentes</p>
+      </div>
+
+      <div class="pricing-toggle">
+        <span class="toggle-label" data-toggle-label-of="mensual">Pago Mensual</span>
+        <button type="button" class="toggle-switch" id="oficinasToggle" role="switch" aria-checked="true" aria-label="Cambiar entre pago mensual y pago anual">
+          <span class="toggle-knob"></span>
+        </button>
+        <span class="toggle-label active" data-toggle-label-of="anual">Pago Anual</span>
+        <span class="toggle-badge">30% OFF</span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card" data-of-plan="base">
+          <h3>Oficina Base</h3>
+          <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">Facturado mes a mes</p>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="fichas">0</span> fichas de propiedad por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="tasaciones">0</span> tasaciones con IA por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+          </ul>
+          <a class="btn btn-outline of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Base</a>
+        </div>
+
+        <div class="price-card price-card-popular" data-of-plan="popular">
+          <span class="badge-featured">Más elegido</span>
+          <h3>Oficina Popular</h3>
+          <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">Facturado mes a mes</p>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="fichas">0</span> fichas de propiedad por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="tasaciones">0</span> tasaciones con IA por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+          </ul>
+          <a class="btn btn-primary of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Popular</a>
+        </div>
+
+        <div class="price-card" data-of-plan="top">
+          <h3>Oficina Top</h3>
+          <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">Facturado mes a mes</p>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="fichas">0</span> fichas de propiedad por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="tasaciones">0</span> tasaciones con IA por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+          </ul>
+          <a class="btn btn-outline of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Top</a>
+        </div>
+      </div>
+
+      <p class="pricing-note">Setup y configuración incluidos. Te ayudamos a cargar a todo el equipo. Escribinos por WhatsApp.</p>
+    </div>
+  </section>
+
   <section class="how" id="como-funciona">
     <div class="wrap">
       <div class="section-head center">
@@ -558,6 +639,7 @@
           <ul>
             <li><a href="#que-es">Qué es Cierre</a></li>
             <li><a href="#planes">Planes</a></li>
+            <li><a href="#oficinas">Oficinas</a></li>
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#faq">Preguntas frecuentes</a></li>
           </ul>
@@ -615,6 +697,91 @@
   toggle.addEventListener('click', function(){
     var next = toggle.getAttribute('aria-checked') !== 'true';
     render(next);
+  });
+
+  render(true);
+})();
+
+(function(){
+  var input = document.getElementById('cantAgentes');
+  var toggle = document.getElementById('oficinasToggle');
+  if(!input || !toggle) return;
+
+  var labelMensual = document.querySelector('[data-toggle-label-of="mensual"]');
+  var labelAnual = document.querySelector('[data-toggle-label-of="anual"]');
+
+  // Formula: precio_mensual(n) = A + B*n (mismo modelo que usa Propio,
+  // escalado al % mas barato que ya tenemos contra sus planes individuales).
+  // El anual es siempre 30% off del mensual, igual convencion que el resto del sitio.
+  var PLANES = {
+    base: {
+      a: 4000, b: 5900,
+      cupos: { fichas: 40, tasaciones: 15, cuestionarios: 15, posteos: 15 },
+      wa: 'Oficina%20Base'
+    },
+    popular: {
+      a: 4800, b: 7300,
+      cupos: { fichas: 100, tasaciones: 35, cuestionarios: 30, posteos: 30 },
+      wa: 'Oficina%20Popular'
+    },
+    top: {
+      a: 16500, b: 24750,
+      cupos: { fichas: 250, tasaciones: 80, cuestionarios: 100, posteos: 100 },
+      wa: 'Oficina%20Top'
+    }
+  };
+
+  function fmt(n){
+    return '$' + Math.round(n).toLocaleString('es-AR');
+  }
+
+  function render(isAnual){
+    var n = Math.max(3, parseInt(input.value, 10) || 3);
+    if (n !== parseInt(input.value, 10)) input.value = n;
+
+    Object.keys(PLANES).forEach(function(key){
+      var plan = PLANES[key];
+      var card = document.querySelector('.price-card[data-of-plan="' + key + '"]');
+      if(!card) return;
+
+      var mensual = plan.a + plan.b * n;
+      var anual = mensual * 0.7;
+      var amountEl = card.querySelector('.amount');
+      var noteEl = card.querySelector('.price-annual-note');
+
+      if(isAnual){
+        amountEl.textContent = fmt(anual);
+        var total = anual * 12;
+        var ahorro = (mensual - anual) * 12;
+        noteEl.innerHTML = 'Total <strong>' + fmt(total) + '</strong> el año — ahorrás <strong>' + fmt(ahorro) + '</strong>';
+      } else {
+        amountEl.textContent = fmt(mensual);
+        noteEl.textContent = 'Facturado mes a mes';
+      }
+
+      Object.keys(plan.cupos).forEach(function(q){
+        var qEl = card.querySelector('.plan-quota[data-q="' + q + '"]');
+        if(qEl) qEl.textContent = (plan.cupos[q] * n).toLocaleString('es-AR');
+      });
+
+      var cta = card.querySelector('.of-cta');
+      if(cta){
+        cta.href = 'https://wa.me/5491124832755?text=Hola%2C%20quiero%20info%20del%20plan%20' + plan.wa + '%20para%20' + n + '%20agentes';
+      }
+    });
+
+    if(labelMensual) labelMensual.classList.toggle('active', !isAnual);
+    if(labelAnual) labelAnual.classList.toggle('active', isAnual);
+    toggle.setAttribute('aria-checked', String(isAnual));
+  }
+
+  toggle.addEventListener('click', function(){
+    var next = toggle.getAttribute('aria-checked') !== 'true';
+    render(next);
+  });
+
+  input.addEventListener('input', function(){
+    render(toggle.getAttribute('aria-checked') === 'true');
   });
 
   render(true);
