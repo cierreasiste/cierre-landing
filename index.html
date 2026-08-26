@@ -163,13 +163,14 @@
   }
   .price-card-popular{border-color:var(--black);position:relative;}
   .price-card h3{font-size:18px;}
-  .price-value{margin:18px 0 2px;display:flex;align-items:baseline;gap:6px;}
+  .price-row{display:flex;align-items:baseline;gap:10px;margin:18px 0 2px;flex-wrap:wrap;}
+  .price-value{margin:0;display:flex;align-items:baseline;gap:6px;}
   .price-value .amount{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.5px;}
   .price-value .period{font-size:14px;color:var(--gray);}
   .price-annual-note{font-size:13px;color:var(--gray);margin-bottom:22px;}
   .price-annual-note strong{color:var(--black);}
-  .price-strike{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--gray-light);text-decoration:line-through;text-decoration-color:var(--gray-light);margin:16px 0 -6px;min-height:19px;}
-  .price-strike:empty{visibility:hidden;}
+  .price-strike{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:16px;color:var(--gray-light);text-decoration:line-through;text-decoration-color:var(--gray-light);}
+  .price-strike:empty{display:none;}
   .pricing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin:4px 0 40px;flex-wrap:wrap;}
   .toggle-label{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;color:var(--gray-light);transition:color .2s;cursor:pointer;user-select:none;}
   .toggle-label.active{color:var(--black);}
@@ -428,8 +429,10 @@
       <div class="pricing-grid">
         <div class="price-card">
           <h3>Base</h3>
-          <span class="price-strike"></span>
-          <div class="price-value" data-mensual="7900" data-anual="5500"><span class="amount">$7.900</span><span class="period">/mes</span></div>
+          <div class="price-row">
+            <span class="price-strike"></span>
+            <div class="price-value" data-mensual="7900" data-anual="5500"><span class="amount">$7.900</span><span class="period">/mes</span></div>
+          </div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 40 fichas de propiedad por mes</li>
@@ -443,8 +446,10 @@
         <div class="price-card price-card-popular">
           <span class="badge-featured">Más elegido</span>
           <h3>Popular</h3>
-          <span class="price-strike"></span>
-          <div class="price-value" data-mensual="9700" data-anual="6800"><span class="amount">$9.700</span><span class="period">/mes</span></div>
+          <div class="price-row">
+            <span class="price-strike"></span>
+            <div class="price-value" data-mensual="9700" data-anual="6800"><span class="amount">$9.700</span><span class="period">/mes</span></div>
+          </div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 100 fichas de propiedad por mes</li>
@@ -457,8 +462,10 @@
 
         <div class="price-card">
           <h3>Top</h3>
-          <span class="price-strike"></span>
-          <div class="price-value" data-mensual="33000" data-anual="23000"><span class="amount">$33.000</span><span class="period">/mes</span></div>
+          <div class="price-row">
+            <span class="price-strike"></span>
+            <div class="price-value" data-mensual="33000" data-anual="23000"><span class="amount">$33.000</span><span class="period">/mes</span></div>
+          </div>
           <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 250 fichas de propiedad por mes</li>
@@ -638,7 +645,7 @@
       if(isAnual){
         amountEl.textContent = fmt(anual);
         if(strikeEl) strikeEl.textContent = fmt(mensual);
-        noteEl.textContent = 'Facturado anualmente';
+        noteEl.textContent = fmt(anual * 12) + ' por año, facturado una vez';
       } else {
         amountEl.textContent = fmt(mensual);
         if(strikeEl) strikeEl.textContent = '';
