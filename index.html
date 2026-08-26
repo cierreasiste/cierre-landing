@@ -162,6 +162,15 @@
   .price-value .period{font-size:14px;color:var(--gray);}
   .price-annual-note{font-size:13px;color:var(--gray);margin-bottom:22px;}
   .price-annual-note strong{color:var(--black);}
+  .pricing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin:4px 0 40px;flex-wrap:wrap;}
+  .toggle-label{font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;color:var(--gray-light);transition:color .2s;cursor:pointer;user-select:none;}
+  .toggle-label.active{color:var(--black);}
+  .toggle-switch{position:relative;width:50px;height:28px;border-radius:999px;border:none;background:var(--border);cursor:pointer;padding:0;flex:none;}
+  .toggle-switch[aria-checked="true"]{background:var(--green);}
+  .toggle-knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .2s;}
+  .toggle-switch[aria-checked="true"] .toggle-knob{left:25px;}
+  .toggle-badge{background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.3px;}
+
   .plan-features{list-style:none;display:flex;flex-direction:column;gap:11px;margin:0 0 26px;flex:1;}
   .plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--black);}
   .plan-features li span.check{flex:none;color:var(--green);font-weight:700;}
@@ -387,11 +396,20 @@
         <p>Todos los planes incluyen los cuatro productos de Cierre. La diferencia es cuánto podés usar cada uno por mes.</p>
       </div>
 
+      <div class="pricing-toggle">
+        <span class="toggle-label" data-toggle-label="mensual">Pago Mensual</span>
+        <button type="button" class="toggle-switch" id="pricingToggle" role="switch" aria-checked="true" aria-label="Cambiar entre pago mensual y pago anual">
+          <span class="toggle-knob"></span>
+        </button>
+        <span class="toggle-label active" data-toggle-label="anual">Pago Anual</span>
+        <span class="toggle-badge">30% OFF</span>
+      </div>
+
       <div class="pricing-grid">
         <div class="price-card">
           <h3>Base</h3>
-          <div class="price-value"><span class="amount">$7.900</span><span class="period">/mes</span></div>
-          <p class="price-annual-note">O <strong>$5.500/mes</strong> pagando el plan anual (30% off)</p>
+          <div class="price-value" data-mensual="7900" data-anual="5500"><span class="amount">$7.900</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 40 fichas de propiedad por mes</li>
             <li><span class="check">✓</span> 15 tasaciones con IA por mes</li>
@@ -404,8 +422,8 @@
         <div class="price-card price-card-popular">
           <span class="badge-featured">Más elegido</span>
           <h3>Popular</h3>
-          <div class="price-value"><span class="amount">$9.700</span><span class="period">/mes</span></div>
-          <p class="price-annual-note">O <strong>$6.800/mes</strong> pagando el plan anual (30% off)</p>
+          <div class="price-value" data-mensual="9700" data-anual="6800"><span class="amount">$9.700</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 100 fichas de propiedad por mes</li>
             <li><span class="check">✓</span> 35 tasaciones con IA por mes</li>
@@ -417,8 +435,8 @@
 
         <div class="price-card">
           <h3>Top</h3>
-          <div class="price-value"><span class="amount">$33.000</span><span class="period">/mes</span></div>
-          <p class="price-annual-note">O <strong>$23.000/mes</strong> pagando el plan anual (30% off)</p>
+          <div class="price-value" data-mensual="33000" data-anual="23000"><span class="amount">$33.000</span><span class="period">/mes</span></div>
+          <p class="price-annual-note">Facturado mes a mes</p>
           <ul class="plan-features">
             <li><span class="check">✓</span> 250 fichas de propiedad por mes</li>
             <li><span class="check">✓</span> 80 tasaciones con IA por mes</li>
@@ -561,5 +579,46 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var toggle = document.getElementById('pricingToggle');
+  if(!toggle) return;
+  var priceValues = document.querySelectorAll('.price-value[data-mensual]');
+  var labelMensual = document.querySelector('[data-toggle-label="mensual"]');
+  var labelAnual = document.querySelector('[data-toggle-label="anual"]');
+
+  function fmt(n){
+    return '$' + Math.round(n).toLocaleString('es-AR');
+  }
+
+  function render(isAnual){
+    priceValues.forEach(function(el){
+      var mensual = Number(el.dataset.mensual);
+      var anual = Number(el.dataset.anual);
+      var amountEl = el.querySelector('.amount');
+      var noteEl = el.parentElement.querySelector('.price-annual-note');
+      if(isAnual){
+        amountEl.textContent = fmt(anual);
+        var total = anual * 12;
+        var ahorro = (mensual - anual) * 12;
+        noteEl.innerHTML = 'Total <strong>' + fmt(total) + '</strong> el año — ahorrás <strong>' + fmt(ahorro) + '</strong>';
+      } else {
+        amountEl.textContent = fmt(mensual);
+        noteEl.textContent = 'Facturado mes a mes';
+      }
+    });
+    if(labelMensual) labelMensual.classList.toggle('active', !isAnual);
+    if(labelAnual) labelAnual.classList.toggle('active', isAnual);
+    toggle.setAttribute('aria-checked', String(isAnual));
+  }
+
+  toggle.addEventListener('click', function(){
+    var next = toggle.getAttribute('aria-checked') !== 'true';
+    render(next);
+  });
+
+  render(true);
+})();
+</script>
 </body>
 </html>
