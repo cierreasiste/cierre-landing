@@ -451,6 +451,7 @@
             <li><span class="check">✓</span> <span class="plan-quota" data-q="tasaciones">0</span> valuaciones con IA por mes</li>
             <li><span class="check">✓</span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
             <li><span class="check">✓</span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="videos">0</span> videos para redes por mes</li>
           </ul>
           <a class="btn btn-outline of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Base</a>
         </div>
@@ -468,6 +469,7 @@
             <li><span class="check">✓</span> <span class="plan-quota" data-q="tasaciones">0</span> valuaciones con IA por mes</li>
             <li><span class="check">✓</span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
             <li><span class="check">✓</span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="videos">0</span> videos para redes por mes</li>
           </ul>
           <a class="btn btn-primary of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Popular</a>
         </div>
@@ -484,6 +486,7 @@
             <li><span class="check">✓</span> <span class="plan-quota" data-q="tasaciones">0</span> valuaciones con IA por mes</li>
             <li><span class="check">✓</span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
             <li><span class="check">✓</span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+            <li><span class="check">✓</span> <span class="plan-quota" data-q="videos">0</span> videos para redes por mes</li>
           </ul>
           <a class="btn btn-outline of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Top</a>
         </div>
@@ -569,18 +572,18 @@
   // y en cierre-bot/db.js: OFICINA_COEF. Si cambian los numeros, actualizar en los 3 lugares.)
   var PLANES = {
     base: {
-      a: 4000, b: 5900,
-      cupos: { fichas: 40, tasaciones: 15, cuestionarios: 15, posteos: 15 },
+      a: 4600, b: 6785,
+      cupos: { fichas: 40, tasaciones: 15, cuestionarios: 15, posteos: 15, videos: 5 },
       wa: 'Oficina%20Base'
     },
     popular: {
-      a: 4800, b: 7300,
-      cupos: { fichas: 100, tasaciones: 35, cuestionarios: 30, posteos: 30 },
+      a: 5520, b: 8395,
+      cupos: { fichas: 100, tasaciones: 35, cuestionarios: 30, posteos: 30, videos: 10 },
       wa: 'Oficina%20Popular'
     },
     top: {
-      a: 16500, b: 24750,
-      cupos: { fichas: 250, tasaciones: 80, cuestionarios: 100, posteos: 100 },
+      a: 18975, b: 28463,
+      cupos: { fichas: 400, tasaciones: 80, cuestionarios: 125, posteos: 125, videos: 40 },
       wa: 'Oficina%20Top'
     }
   };
