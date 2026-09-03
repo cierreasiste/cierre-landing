@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cierre — El asistente de WhatsApp para asesores e inmobiliarias</title>
-<meta name="description" content="Cierre es un asistente de WhatsApp para asesores e inmobiliarias: fichas de propiedades, valuaciones, cuestionarios de visita y posteos para redes, sin instalar nada.">
+<title>Cierre para Inmobiliarias — Plan Oficina | Cierre</title>
+<meta name="description" content="Cierre para inmobiliarias: sumá a todo tu equipo con un cupo compartido de fichas, valuaciones, cuestionarios y posteos, y un solo pago para toda la oficina.">
 <link rel="icon" type="image/png" href="favicon_512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -276,6 +276,8 @@
   }
 
 
+  .price-card .plan-quota{color:var(--gray);}
+
 </style>
 </head>
 <body>
@@ -289,7 +291,7 @@
         <li><a href="que-es.html">Qué es</a></li>
 <li><a href="como-funciona.html">Cómo funciona</a></li>
 <li><a href="asesores.html">Asesores</a></li>
-<li><a href="inmobiliarias.html">Inmobiliarias</a></li>
+<li><a href="inmobiliarias.html" class="active">Inmobiliarias</a></li>
 <li><a href="index.html#planes">Planes</a></li>
 <li><a href="index.html#faq">Preguntas frecuentes</a></li>
       </ul>
@@ -300,7 +302,7 @@
       </a>
       <a class="login-link" href="https://cierre-bot-production.up.railway.app/panel-login" target="_blank" rel="noopener">Iniciar sesión</a>
       <a class="btn btn-outline btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20saber%20mas%20sobre%20Cierre" target="_blank" rel="noopener">Contacto</a>
-      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20sumar%20mi%20inmobiliaria%20a%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -315,7 +317,7 @@
     </ul></nav>
     <div class="mobile-extra">
       <a class="login-link" href="https://cierre-bot-production.up.railway.app/panel-login" target="_blank" rel="noopener">Iniciar sesión en tu panel</a>
-      <a class="btn btn-whatsapp" style="width:100%;justify-content:center;" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="btn btn-whatsapp" style="width:100%;justify-content:center;" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20sumar%20mi%20inmobiliaria%20a%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
       <a class="social-icon" style="align-self:flex-start;" href="https://instagram.com/cierreaiprop" target="_blank" rel="noopener" aria-label="Instagram de Cierre">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
       </a>
@@ -327,78 +329,26 @@
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow"><span class="accent-dot"></span> Para asesores e inmobiliarias</span>
-      <h1>El asistente de WhatsApp para asesores e inmobiliarias</h1>
-      <p class="lead">Cierre arma fichas de propiedades, valuaciones, posteos para redes y seguimiento de cartera directamente en tu WhatsApp. Sin apps, sin instalar nada.</p>
+      <span class="eyebrow"><span class="accent-dot"></span> Para inmobiliarias</span>
+      <h1>Sumá a toda tu inmobiliaria a Cierre, con un cupo compartido para todo el equipo</h1>
+      <p class="lead">Dejá de pagar un plan por cada agente por separado. Con el plan Oficina, tu inmobiliaria tiene un solo cupo de fichas, valuaciones, cuestionarios y posteos para repartir entre todo el equipo — y un solo pago para vos.</p>
       <div class="hero-cta">
-        <a class="btn btn-whatsapp" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-        <a class="btn btn-outline" href="que-es.html">Ver qué es Cierre</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20sumar%20mi%20inmobiliaria%20a%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        <a class="btn btn-outline" href="#precios">Ver precios</a>
       </div>
     </div>
     <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1737442886747-9fb768b96ed2?auto=format&fit=crop&w=900&q=80" alt="Persona sosteniendo la llave de una propiedad">
+      <img src="oficina_hero.jpg" alt="Propiedad en 3D saliendo de la pantalla de un celular, de la app a la realidad">
     </div>
   </div>
 </section>
 
-<section class="about bg-soft" id="que-es">
-  <div class="wrap" style="text-align:center;">
-    <span class="eyebrow" style="justify-content:center;">Qué es Cierre</span>
-    <h2 style="margin-bottom:20px;">Un chat de WhatsApp que hace el trabajo administrativo por vos</h2>
-    <p class="body">Elegís qué necesitás — una ficha, una valuación, un posteo — y te devuelve el resultado en segundos, listo para usar. Sin crear una cuenta ni instalar nada.</p>
-    <p class="page-links" style="justify-content:center;"><a class="btn btn-outline" href="que-es.html">Leer la historia completa →</a></p>
-  </div>
-</section>
-
-<section id="para-quien">
+<section class="bg-soft">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow" style="justify-content:center;">Para quién es Cierre</span>
-      <h2>¿Trabajás solo o con un equipo?</h2>
-    </div>
-    <div class="audience-grid">
-      <div class="audience-card">
-        <div class="audience-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-  <circle cx="12" cy="7" r="4" /></svg></div>
-        <h3>Sos asesor</h3>
-        <p>Usás Cierre por tu cuenta, con tu propio plan y tu propia marca personal.</p>
-        <ul>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> Las cinco herramientas de Cierre, con tu marca</li>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> Seguimiento automático de tu cartera</li>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> Planes desde $10.350/mes</li>
-        </ul>
-        <a class="btn btn-primary" style="justify-content:center;" href="asesores.html">Ver Cierre para asesores</a>
-      </div>
-      <div class="audience-card">
-        <div class="audience-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4" />
-  <path d="M10 8h4" />
-  <path d="M14 21v-3a2 2 0 0 0-4 0v3" />
-  <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" />
-  <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg></div>
-        <h3>Sos dueño o gerente de una inmobiliaria</h3>
-        <p>Sumás a todo tu equipo con un cupo compartido y un solo pago.</p>
-        <ul>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> Panel de control con ranking del equipo</li>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> Marca de tu oficina en todo lo generado</li>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> Ahorro real frente a planes sueltos</li>
-        </ul>
-        <a class="btn btn-primary" style="justify-content:center;" href="inmobiliarias.html">Ver Cierre para inmobiliarias</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-soft" id="productos">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow" style="justify-content:center;">Productos</span>
-      <h2>Qué podés hacer con Cierre</h2>
+      <span class="eyebrow" style="justify-content:center;">Lo que ya usa cada agente</span>
+      <h2>Cada agente de tu equipo tiene las cinco herramientas de Cierre</h2>
+      <p>El plan Oficina no reemplaza los productos de Cierre: les da a todos tus agentes acceso a los cinco, con un cupo compartido en vez de uno por persona.</p>
     </div>
     <div class="products-grid">
       <div class="product-card">
@@ -408,7 +358,7 @@
   <path d="M16 13H8" />
   <path d="M16 17H8" /></svg></div>
         <h3>Ficha de propiedad</h3>
-        <p>Pasás el link de cualquier aviso (sea tuyo o de un colega) y Cierre arma una ficha prolija con tus datos de contacto, foto y descripción, lista para enviar por WhatsApp o descargar en PDF.</p>
+        <p>Fichas prolijas con la marca de tu inmobiliaria, listas para enviar o descargar.</p>
       </div>
       <div class="product-card">
         <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" />
@@ -422,14 +372,14 @@
   <path d="M12 18h.01" />
   <path d="M8 18h.01" /></svg></div>
         <h3>Valuador con IA</h3>
-        <p>Respondé un cuestionario guiado sobre la propiedad y recibí en minutos una valuación con comparables reales de la zona, lista para mostrarle al propietario.</p>
+        <p>Valuaciones con comparables reales de la zona, en minutos.</p>
       </div>
       <div class="product-card">
         <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
   <circle cx="9" cy="9" r="2" />
   <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg></div>
         <h3>Post para redes</h3>
-        <p>Generá una imagen lista para publicar en Instagram o Facebook, con los datos de la propiedad y tu marca.</p>
+        <p>Imágenes listas para publicar, con la marca de la oficina.</p>
       </div>
       <div class="product-card">
         <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" />
@@ -441,7 +391,7 @@
   <path d="M17 7.5h4" />
   <path d="M17 16.5h4" /></svg></div>
         <h3>Video para redes</h3>
-        <p>Subís las fotos de la propiedad y una descripción (o grabás tu propia voz), y Cierre arma un video con narración, subtítulos sincronizados, transiciones entre fotos y tu marca.</p>
+        <p>Videos con narración y subtítulos, listos para Instagram.</p>
       </div>
       <div class="product-card product-card-featured">
         <span class="badge-featured">Distintivo de Cierre</span>
@@ -449,193 +399,272 @@
   <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
   <path d="m9 14 2 2 4-4" /></svg></div>
         <h3>Seguimiento de cartera</h3>
-        <p>No es un mensaje suelto: es un seguimiento administrativo completo de cada comprador y cada vendedor de tu cartera, para que ninguno se te escape.</p>
-        <ul class="plan-features" style="margin-bottom:0;margin-top:10px;">
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> Categoriza automáticamente a cada contacto y le asigna una cadencia de recontacto propia.</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> Todos los días te avisa por WhatsApp a quién tenés que contactar y por qué.</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> A las 48 horas de una visita, encuesta automática al comprador con preguntas armadas por IA.</li>
-        </ul>
+        <p>Cada agente tiene su propio seguimiento automático de compradores y vendedores — y vos, como dueño, tenés visibilidad de conjunto desde el panel de oficina.</p>
       </div>
     </div>
-    <p class="page-links"><a href="que-es.html">Ver el detalle completo de cada producto →</a></p>
+    <p class="page-links"><a href="que-es.html">Ver el detalle de cada producto →</a></p>
   </div>
 </section>
 
-<section class="pricing" id="planes">
+<section class="problemas bg-soft">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow" style="justify-content:center;">Planes</span>
-      <h2>Un plan para cada volumen de trabajo</h2>
-      <p>Todos los planes incluyen los cuatro productos de Cierre. La diferencia es cuánto podés usar cada uno por mes.</p>
+      <span class="eyebrow" style="justify-content:center;">¿Te suena familiar?</span>
+      <h2>Lo que pasa cuando cada agente trabaja por su cuenta</h2>
+      <p>Son los problemas más comunes que nos cuentan los dueños y gerentes de inmobiliarias antes de sumarse a Cierre.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />
+  <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+  <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
+  <path d="m2 2 20 20" /></svg></div>
+        <h3>Cero visibilidad</h3>
+        <p>No sabés cuántas fichas, valuaciones o posteos armó cada agente este mes, ni cómo viene usando la herramienta.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2" />
+  <line x1="2" x2="22" y1="10" y2="10" /></svg></div>
+        <h3>Planes sueltos, gastos sueltos</h3>
+        <p>Cada agente paga (o no paga) su plan por separado, sin que la oficina tenga control del conjunto.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
+  <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+  <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+  <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+  <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /></svg></div>
+        <h3>Sin una imagen consistente</h3>
+        <p>Cada uno arma fichas y posteos a su manera, sin que se note que son todos parte de la misma inmobiliaria.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" />
+  <path d="M12 6v6l4 2" /></svg></div>
+        <h3>Tiempo perdido en tareas manuales</h3>
+        <p>Fichas, valuaciones y cuestionarios armados a mano en vez de estar vendiendo.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17h6v-6" />
+  <path d="m22 17-8.5-8.5-5 5L2 7" /></svg></div>
+        <h3>Cupos que se pierden</h3>
+        <p>Si un agente no usa todo su cupo individual, ese cupo se pierde: no queda disponible para el resto del equipo.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z" /></svg></div>
+        <h3>Altas complicadas</h3>
+        <p>Sumar un agente nuevo implica dar de alta un plan aparte, con su propio pago y su propia gestión.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">¿Qué gana tu inmobiliaria?</span>
+      <h2>Esto es lo que Cierre le suma a tu oficina</h2>
+      <p>Todo esto ya está funcionando y disponible para tu equipo hoy.</p>
+    </div>
+    <div class="products-grid oficinas-benefits">
+      <div class="product-card">
+        <span class="badge-featured">Ya funciona</span>
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+  <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+  <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></svg></div>
+        <h3>Cupo compartido</h3>
+        <p>Un solo pool de fichas, valuaciones, cuestionarios y posteos para toda la oficina. No repartís cupos fijos por agente: se usan donde hacen falta.</p>
+      </div>
+      <div class="product-card">
+        <span class="badge-featured">Ya funciona</span>
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+  <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></svg></div>
+        <h3>Ahorro real</h3>
+        <p>Pagás menos que sumando un plan individual por cada agente. Cuantos más agentes tiene tu oficina, mejor te queda el precio por cabeza.</p>
+      </div>
+      <div class="product-card">
+        <span class="badge-featured">Ya funciona</span>
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <circle cx="9" cy="7" r="4" />
+  <line x1="19" x2="19" y1="8" y2="14" />
+  <line x1="22" x2="16" y1="11" y2="11" /></svg></div>
+        <h3>Alta simple de tu equipo</h3>
+        <p>Nos pasás los números de tus agentes y quedan sumados al cupo de la oficina. Cada uno sigue usando Cierre por su propio WhatsApp, como siempre.</p>
+      </div>
+      <div class="product-card">
+        <span class="badge-featured">Ya funciona</span>
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17V7" />
+  <path d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8" />
+  <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z" /></svg></div>
+        <h3>Un solo pago</h3>
+        <p>Facturación centralizada de toda la oficina, en vez de cobrarle a cada agente por separado.</p>
+      </div>
+      <div class="product-card">
+        <span class="badge-featured">Ya funciona</span>
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16" />
+  <path d="M18 17V9" />
+  <path d="M13 17V5" />
+  <path d="M8 17v-3" /></svg></div>
+        <h3>Panel de control para el dueño</h3>
+        <p>Visibilidad en tiempo real de lo que produce cada agente, con ranking del equipo. Entrás con tu WhatsApp desde el panel web.</p>
+      </div>
+      <div class="product-card">
+        <span class="badge-featured">Ya funciona</span>
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
+  <circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></svg></div>
+        <h3>Marca de oficina en cada ficha y posteo</h3>
+        <p>El logo y los datos de tu inmobiliaria en todo lo que generan tus agentes. Lo cargás una sola vez y queda para todo el equipo.</p>
+      </div>
+      <div class="product-card">
+        <span class="badge-featured">Ya funciona</span>
+        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+  <circle cx="12" cy="10" r="3" /></svg></div>
+        <h3>Mapa de propiedades del equipo</h3>
+        <p>Vista geográfica de todo lo que está cargando tu equipo, para detectar superposiciones de zona. Lo ves directo desde el panel del dueño.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="incluye" class="pricing">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">Tu plan Oficina</span>
+      <h2>Todo lo que incluye</h2>
+    </div>
+    <div class="incluye-cols incluye-cols-single">
+      <div class="incluye-col">
+        <h3>Disponible hoy</h3>
+        <ul class="incluye-list">
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Cupo compartido de fichas, valuaciones, cuestionarios y posteos entre todos los agentes</li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Alta de agentes por WhatsApp, sin instalar nada ni crear usuarios</li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Facturación única para toda la oficina</li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Sin techo de agentes, mínimo 3 para arrancar</li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Soporte por WhatsApp para vos y tu equipo</li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Panel web para el dueño o gerente, con visibilidad y ranking de agentes</li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Login web por WhatsApp para entrar al panel sin usuario ni contraseña</li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Marca de tu inmobiliaria en las fichas y posteos que arma el equipo</li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg> Mapa con las propiedades cargadas por todo el equipo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="precios">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">Precios</span>
+      <h2>¿Cuánto sale el plan Oficina?</h2>
+      <p>Arrancás con solo 3 agentes. Elegí cuántos tiene tu equipo y mirá el precio total.</p>
+    </div>
+
+    <div class="agent-calc">
+      <label for="cantAgentes">¿Cuántos agentes tiene tu oficina?</label>
+      <input type="number" id="cantAgentes" min="3" step="1" value="3">
+      <p class="agent-min">Mínimo 3 agentes</p>
     </div>
 
     <div class="pricing-toggle">
-      <span class="toggle-label" data-toggle-label="mensual">Pago Mensual</span>
-      <button type="button" class="toggle-switch" id="pricingToggle" role="switch" aria-checked="true" aria-label="Cambiar entre pago mensual y pago anual">
+      <span class="toggle-label" data-toggle-label-of="mensual">Pago Mensual</span>
+      <button type="button" class="toggle-switch" id="oficinasToggle" role="switch" aria-checked="true" aria-label="Cambiar entre pago mensual y pago anual">
         <span class="toggle-knob"></span>
       </button>
-      <span class="toggle-label active" data-toggle-label="anual">Pago Anual</span>
+      <span class="toggle-label active" data-toggle-label-of="anual">Pago Anual</span>
       <span class="toggle-badge">30% OFF</span>
     </div>
 
     <div class="pricing-grid">
-      <div class="price-card">
-        <h3>Base</h3>
+      <div class="price-card" data-of-plan="base">
+        <h3>Oficina Base</h3>
         <div class="price-row">
           <span class="price-strike"></span>
-          <div class="price-value" data-mensual="10350" data-anual="7245"><span class="amount">$10.350</span><span class="period">/mes</span></div>
+          <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
         </div>
         <p class="price-annual-note">Facturado mes a mes</p>
         <ul class="plan-features">
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 40 fichas de propiedad por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 15 valuaciones con IA por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 15 cuestionarios post-visita por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 15 posteos para redes por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 5 videos para redes por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="fichas">0</span> fichas de propiedad por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="tasaciones">0</span> valuaciones con IA por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="videos">0</span> videos para redes por mes</li>
         </ul>
-        <a class="btn btn-outline" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20contratar%20el%20plan%20Base%20de%20Cierre" target="_blank" rel="noopener">Elegir Base</a>
+        <a class="btn btn-outline of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Base</a>
       </div>
 
-      <div class="price-card price-card-popular">
+      <div class="price-card price-card-popular" data-of-plan="popular">
         <span class="badge-featured">Más elegido</span>
-        <h3>Popular</h3>
+        <h3>Oficina Popular</h3>
         <div class="price-row">
           <span class="price-strike"></span>
-          <div class="price-value" data-mensual="12075" data-anual="8510"><span class="amount">$12.075</span><span class="period">/mes</span></div>
+          <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
         </div>
         <p class="price-annual-note">Facturado mes a mes</p>
         <ul class="plan-features">
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 100 fichas de propiedad por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 35 valuaciones con IA por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 30 cuestionarios post-visita por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 30 posteos para redes por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 10 videos para redes por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="fichas">0</span> fichas de propiedad por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="tasaciones">0</span> valuaciones con IA por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="videos">0</span> videos para redes por mes</li>
         </ul>
-        <a class="btn btn-primary" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20contratar%20el%20plan%20Popular%20de%20Cierre" target="_blank" rel="noopener">Elegir Popular</a>
+        <a class="btn btn-primary of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Popular</a>
       </div>
 
-      <div class="price-card">
-        <h3>Top</h3>
+      <div class="price-card" data-of-plan="top">
+        <h3>Oficina Top</h3>
         <div class="price-row">
           <span class="price-strike"></span>
-          <div class="price-value" data-mensual="41400" data-anual="28750"><span class="amount">$41.400</span><span class="period">/mes</span></div>
+          <div class="price-value"><span class="amount">$0</span><span class="period">/mes</span></div>
         </div>
         <p class="price-annual-note">Facturado mes a mes</p>
         <ul class="plan-features">
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 400 fichas de propiedad por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 80 valuaciones con IA por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 125 cuestionarios post-visita por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 125 posteos para redes por mes</li>
-          <li><svg class="ico check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
-  <path d="m9 11 3 3L22 4" /></svg> 40 videos para redes por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="fichas">0</span> fichas de propiedad por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="tasaciones">0</span> valuaciones con IA por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="cuestionarios">0</span> cuestionarios post-visita por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="posteos">0</span> posteos para redes por mes</li>
+          <li><span class="check"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335" />
+  <path d="m9 11 3 3L22 4" /></svg></span> <span class="plan-quota" data-q="videos">0</span> videos para redes por mes</li>
         </ul>
-        <a class="btn btn-outline" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20contratar%20el%20plan%20Top%20de%20Cierre" target="_blank" rel="noopener">Elegir Top</a>
+        <a class="btn btn-outline of-cta" href="#" target="_blank" rel="noopener">Elegir Oficina Top</a>
       </div>
     </div>
 
-    <p class="pricing-note">¿No estás seguro de qué plan te conviene? Escribinos por WhatsApp y te ayudamos a elegir. ¿Sos inmobiliaria? <a href="inmobiliarias.html" style="color:var(--black);font-weight:700;text-decoration:underline;">Mirá el plan Oficina →</a></p>
+    <p class="pricing-note">Setup y configuración incluidos. Te ayudamos a cargar a todo el equipo. Escribinos por WhatsApp.</p>
   </div>
 </section>
 
-<section class="bg-soft">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow" style="justify-content:center;">Cómo funciona</span>
-      <h2>Tres pasos, todo desde el chat</h2>
-    </div>
-    <div class="products-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="product-card">
-        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg></div>
-        <h3>1. Le escribís a Cierre</h3>
-        <p>Guardás el número de WhatsApp y arrancás la conversación cuando quieras.</p>
-      </div>
-      <div class="product-card">
-        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5h8" />
-  <path d="M13 12h8" />
-  <path d="M13 19h8" />
-  <path d="m3 17 2 2 4-4" />
-  <path d="m3 7 2 2 4-4" /></svg></div>
-        <h3>2. Elegís lo que necesitás</h3>
-        <p>Un menú simple te ofrece las opciones: valuar, armar una ficha, enviar el cuestionario de visita o crear un posteo.</p>
-      </div>
-      <div class="product-card">
-        <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
-  <path d="m21.854 2.147-10.94 10.939" /></svg></div>
-        <h3>3. Recibís tu resultado</h3>
-        <p>En segundos te llega el archivo o la imagen lista, con tu marca y tus datos de contacto.</p>
-      </div>
-    </div>
-    <p class="page-links"><a class="btn btn-outline" href="como-funciona.html">Ver una conversación real paso a paso →</a></p>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow" style="justify-content:center;">Preguntas frecuentes</span>
-      <h2>Todo lo que necesitás saber antes de empezar</h2>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>¿Cómo funciona Cierre?</summary>
-        <p>Le escribís al número de WhatsApp de Cierre, elegís una opción del menú (Valuador, Ficha, Visita o Post) y completás los datos que te va pidiendo el chat. En segundos recibís el resultado listo para usar, con tu marca y tus datos de contacto.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Puedo probar Cierre antes de pagar?</summary>
-        <p>Sí. Podés usar cada uno de los cuatro productos una vez gratis, sin dejar tarjeta ni suscribirte a nada. Si te sirve, ahí elegís el plan que más se ajuste a tu volumen de trabajo.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Qué portales son compatibles con la Ficha de propiedad?</summary>
-        <p>Por ahora funciona con links de Zonaprop y Argenprop, los portales más usados en Argentina. Vamos sumando más a medida que lo necesitan los asesores que lo usan.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Qué pasa si me quedo sin cupos en el mes?</summary>
-        <p>Los cupos se renuevan automáticamente en cada ciclo de facturación. Si los usás todos antes de que termine el mes, podés esperar a la renovación o escribirnos por WhatsApp para pasarte a un plan con más cupo en el momento.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Puedo cancelar cuando quiera?</summary>
-        <p>Sí. Cierre no hace débito automático: cada mes te llega el link de pago por WhatsApp y vos decidís si renovás. Si no pagás, tu cuenta simplemente queda en pausa hasta que quieras volver a activarla.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Mis datos y los de mis clientes están seguros?</summary>
-        <p>Sí. Tu información se guarda en una base de datos privada a la que solo accedés vos desde tu WhatsApp, y no se comparte con terceros.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Cómo son los videos para redes de Cierre?</summary>
-        <p>Subís las fotos de la propiedad y una descripción (o grabás tu propia voz), y Cierre arma un video con narración, subtítulos sincronizados, transiciones entre fotos y tu marca. Nada de fotos con marca de agua ajena ni voz genérica: es tu contenido, listo para publicar en Instagram o Facebook.</p>
-      </details>
-    </div>
-    <p class="faq-note">¿Tenés otra pregunta? <a href="https://wa.me/5491124832755?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20Cierre" target="_blank" rel="noopener" style="color:var(--black);font-weight:700;text-decoration:underline;">Escribinos por WhatsApp</a>.</p>
-  </div>
-</section>
-
-<section id="contacto">
+<section id="contacto-oficina">
   <div class="cta-final wrap">
     <div>
-      <h2>¿Querés empezar a usar Cierre?</h2>
-      <p>Escribinos por WhatsApp y arrancá directamente desde ahí.</p>
-      <a class="btn btn-whatsapp" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <h2>¿Le das de alta a tu inmobiliaria?</h2>
+      <p>Escribinos por WhatsApp y vemos juntos qué plan de Oficina te conviene según tu equipo.</p>
+      <a class="btn btn-whatsapp" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20sumar%20mi%20inmobiliaria%20a%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
     </div>
     <div class="qr-block">
       <img src="qr_whatsapp.png" alt="Código QR para escribirle a Cierre por WhatsApp">
-      <span>Escaneá con la cámara de tu celular para abrir el chat</span>
+      <span>Escaneá para escribirnos directo desde tu celular</span>
     </div>
   </div>
 </section>
@@ -702,21 +731,37 @@
 
 <script>
 (function(){
-  var toggle = document.getElementById('pricingToggle');
-  if(!toggle) return;
-  var priceValues = document.querySelectorAll('.price-value[data-mensual]');
-  var labelMensual = document.querySelector('[data-toggle-label="mensual"]');
-  var labelAnual = document.querySelector('[data-toggle-label="anual"]');
+  var input = document.getElementById('cantAgentes');
+  var toggle = document.getElementById('oficinasToggle');
+  if(!input || !toggle) return;
+
+  var labelMensual = document.querySelector('[data-toggle-label-of="mensual"]');
+  var labelAnual = document.querySelector('[data-toggle-label-of="anual"]');
+
+  var PLANES = {
+    base: { a: 4600, b: 6785, cupos: { fichas: 40, tasaciones: 15, cuestionarios: 15, posteos: 15, videos: 5 }, wa: 'Oficina%20Base' },
+    popular: { a: 5520, b: 8395, cupos: { fichas: 100, tasaciones: 35, cuestionarios: 30, posteos: 30, videos: 10 }, wa: 'Oficina%20Popular' },
+    top: { a: 18975, b: 28463, cupos: { fichas: 400, tasaciones: 80, cuestionarios: 125, posteos: 125, videos: 40 }, wa: 'Oficina%20Top' }
+  };
 
   function fmt(n){ return '$' + Math.round(n).toLocaleString('es-AR'); }
 
   function render(isAnual){
-    priceValues.forEach(function(el){
-      var mensual = Number(el.dataset.mensual);
-      var anual = Number(el.dataset.anual);
-      var amountEl = el.querySelector('.amount');
-      var strikeEl = el.previousElementSibling;
-      var noteEl = el.closest('.price-card').querySelector('.price-annual-note');
+    var n = Math.max(3, parseInt(input.value, 10) || 3);
+    if (n !== parseInt(input.value, 10)) input.value = n;
+
+    Object.keys(PLANES).forEach(function(key){
+      var plan = PLANES[key];
+      var card = document.querySelector('.price-card[data-of-plan="' + key + '"]');
+      if(!card) return;
+
+      var mensual = plan.a + plan.b * n;
+      var anual = mensual * 0.7;
+      var amountEl = card.querySelector('.amount');
+      var priceValueEl = card.querySelector('.price-value');
+      var strikeEl = priceValueEl ? priceValueEl.previousElementSibling : null;
+      var noteEl = card.querySelector('.price-annual-note');
+
       if(isAnual){
         amountEl.textContent = fmt(anual);
         if(strikeEl) strikeEl.textContent = fmt(mensual);
@@ -726,7 +771,18 @@
         if(strikeEl) strikeEl.textContent = '';
         noteEl.textContent = 'Facturado mes a mes';
       }
+
+      Object.keys(plan.cupos).forEach(function(q){
+        var qEl = card.querySelector('.plan-quota[data-q="' + q + '"]');
+        if(qEl) qEl.textContent = (plan.cupos[q] * n).toLocaleString('es-AR');
+      });
+
+      var cta = card.querySelector('.of-cta');
+      if(cta){
+        cta.href = 'https://wa.me/5491124832755?text=Hola%2C%20quiero%20info%20del%20plan%20' + plan.wa + '%20para%20' + n + '%20agentes';
+      }
     });
+
     if(labelMensual) labelMensual.classList.toggle('active', !isAnual);
     if(labelAnual) labelAnual.classList.toggle('active', isAnual);
     toggle.setAttribute('aria-checked', String(isAnual));
@@ -735,6 +791,10 @@
   toggle.addEventListener('click', function(){
     var next = toggle.getAttribute('aria-checked') !== 'true';
     render(next);
+  });
+
+  input.addEventListener('input', function(){
+    render(toggle.getAttribute('aria-checked') === 'true');
   });
 
   render(true);
