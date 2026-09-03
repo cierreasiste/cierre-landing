@@ -131,14 +131,14 @@
   .benefit-item p{font-size:14.5px;color:var(--gray);}
 
   /* Products */
-  .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .oficinas-benefits{margin-bottom:44px;}
   .product-card{
     border:1px solid var(--border);border-radius:var(--radius);
     padding:28px 22px;transition:border-color .15s ease, transform .15s ease;
   }
   .product-card:hover{border-color:var(--black);transform:translateY(-3px);}
-  .product-card-featured{border-color:var(--black);position:relative;}
+  .product-card-featured{border-color:var(--black);position:relative;grid-column:span 2;display:flex;flex-direction:column;}
   .badge-featured{
     display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.02em;
     background:linear-gradient(100deg,var(--green),var(--blue));color:#fff;
@@ -250,6 +250,7 @@
     .benefits .wrap{grid-template-columns:1fr;}
     .benefits-media{aspect-ratio:16/9;}
     .products-grid{grid-template-columns:repeat(2,1fr);}
+    .product-card-featured{grid-column:span 2;}
     .pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}
     .steps{grid-template-columns:1fr;}
     .cta-final.wrap{flex-direction:column;text-align:center;padding:44px 28px;}
@@ -260,6 +261,7 @@
     .menu-toggle{display:block;}
     .header-actions .btn-outline{display:none;}
     .products-grid{grid-template-columns:1fr;}
+    .product-card-featured{grid-column:span 1;}
     .footer-top{flex-direction:column;}
   }
 
@@ -395,16 +397,27 @@
           <h3>Valuador con IA</h3>
           <p>Respondé un cuestionario guiado sobre la propiedad y recibí en minutos una valuación con comparables reales de la zona, lista para mostrarle al propietario.</p>
         </div>
-        <div class="product-card product-card-featured">
-          <span class="badge-featured">Distintivo de Cierre</span>
-          <div class="product-icon">📋</div>
-          <h3>Seguimiento post-visita</h3>
-          <p>A las 48 horas de una visita, Cierre le escribe automáticamente al comprador con preguntas armadas por IA según esa propiedad puntual, y te junta las respuestas en un resumen por WhatsApp. Vos no tenés que acordarte de hacer el seguimiento: lo hace Cierre solo.</p>
-        </div>
         <div class="product-card">
           <div class="product-icon">📱</div>
           <h3>Post para redes</h3>
           <p>Generá una imagen lista para publicar en Instagram o Facebook, con los datos de la propiedad y tu marca.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🎬</div>
+          <h3>Video para redes</h3>
+          <p>Subís las fotos de la propiedad y una descripción (o grabás tu propia voz), y Cierre arma un video con narración, subtítulos sincronizados, transiciones entre fotos y tu marca. Listo para publicar en Instagram o Facebook.</p>
+        </div>
+        <div class="product-card product-card-featured">
+          <span class="badge-featured">Distintivo de Cierre</span>
+          <div class="product-icon">📋</div>
+          <h3>Seguimiento de cartera</h3>
+          <p>No es un mensaje suelto: es un seguimiento administrativo completo de cada comprador y cada vendedor de tu cartera, para que ninguno se te escape.</p>
+          <ul class="plan-features" style="margin-bottom:0;margin-top:10px;">
+            <li><span class="check">✓</span> Categoriza automáticamente a cada contacto (comprador caliente, frío, sin respuesta; vendedor recién valuado, en venta, frío o vendido) y le asigna una cadencia de recontacto propia.</li>
+            <li><span class="check">✓</span> Todos los días te avisa por WhatsApp a quién tenés que contactar y por qué, sin que tengas que acordarte vos.</li>
+            <li><span class="check">✓</span> Confirmás el contacto con un mensaje y Cierre reprograma solo el próximo aviso — o cambiás el estado de un vendedor o marcás un comprador como cerrado cuando quieras.</li>
+            <li><span class="check">✓</span> A las 48 horas de una visita, encuesta automática al comprador con preguntas armadas por IA según esa propiedad puntual, con el resumen listo para vos.</li>
+          </ul>
         </div>
       </div>
     </div>
