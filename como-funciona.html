@@ -227,8 +227,13 @@
   .phone-mock{background:var(--black);border-radius:32px;padding:14px;max-width:340px;margin:0 auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);}
   .phone-screen{background:#e5ddd5;border-radius:20px;overflow:hidden;}
   .phone-topbar{background:#075e54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;}
-  .phone-topbar .dot{width:34px;height:34px;border-radius:50%;background:#0bcb75;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;color:#fff;font-size:14px;}
+  .phone-topbar .dot{width:34px;height:34px;border-radius:50%;background:#0bcb75;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;color:#fff;font-size:14px;overflow:hidden;flex:none;}
+  .phone-topbar .dot img{width:100%;height:100%;object-fit:cover;}
   .phone-chat{padding:16px 12px;display:flex;flex-direction:column;gap:8px;min-height:360px;}
+  .phones-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;align-items:start;}
+  .phones-row .phone-mock{max-width:none;}
+  .phones-row .phone-chat{min-height:300px;}
+  .phone-caption{text-align:center;font-size:13.5px;color:var(--gray);font-weight:700;margin-bottom:14px;}
   .bubble{max-width:84%;padding:9px 12px;border-radius:10px;font-size:13px;line-height:1.5;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.08);}
   .bubble-in{background:#fff;border-top-left-radius:2px;align-self:flex-start;color:#111;}
   .bubble-out{background:#d9fdd3;border-top-right-radius:2px;align-self:flex-end;color:#111;}
@@ -287,6 +292,7 @@
     .pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}
     .incluye-cols{grid-template-columns:1fr;}
     .how-grid{grid-template-columns:1fr;}
+    .phones-row{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto;}
     .cta-final.wrap{flex-direction:column;text-align:center;padding:44px 28px;}
     .cta-final .qr-block{margin:0 auto;}
   }
@@ -365,8 +371,8 @@
 </section>
 
 <section>
-  <div class="wrap how-grid">
-    <div>
+  <div class="wrap">
+    <div style="max-width:640px;margin:0 auto;">
       <div class="steps">
         <div class="step">
           <div class="num">1</div>
@@ -399,14 +405,17 @@
       </div>
       <p style="margin-top:32px;"><a class="btn btn-whatsapp" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Probalo vos mismo por WhatsApp</a></p>
     </div>
-    <div class="phone-mock">
-      <div class="phone-screen">
-        <div class="phone-topbar">
-          <span class="dot">C</span>
-          Cierre
-        </div>
-        <div class="phone-chat">
-          <div class="bubble bubble-in">Hola! Soy el asistente de Cierre.
+    <div class="phones-row">
+      <div>
+        <p class="phone-caption">1. Elegís qué necesitás</p>
+        <div class="phone-mock">
+          <div class="phone-screen">
+            <div class="phone-topbar">
+              <span class="dot"><img src="favicon_512.png" alt="Cierre"></span>
+              Cierre
+            </div>
+            <div class="phone-chat">
+              <div class="bubble bubble-in">Hola! Soy el asistente de Cierre.
 
 Con qué te ayudo? Respondé con la letra o número correspondiente.
 
@@ -425,8 +434,21 @@ H. 🆘 Ayuda / Soporte técnico
 5. 🗄️ Contacto (agregar a tu cartera)
 6. 📝 Nota (nota libre sobre un contacto)
 7. 🌴 Vacaciones (pausar avisos automáticos)<div class="bubble-time">09:14</div></div>
-          <div class="bubble bubble-out">A<div class="bubble-time">09:14 ✓✓</div></div>
-          <div class="bubble bubble-in">Qué tipo de propiedad es? Respondé con el número:
+              <div class="bubble bubble-out">A<div class="bubble-time">09:14 ✓✓</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="phone-caption">2. Contestás lo que te pregunta</p>
+        <div class="phone-mock">
+          <div class="phone-screen">
+            <div class="phone-topbar">
+              <span class="dot"><img src="favicon_512.png" alt="Cierre"></span>
+              Cierre
+            </div>
+            <div class="phone-chat">
+              <div class="bubble bubble-in">Qué tipo de propiedad es? Respondé con el número:
 1. Departamento
 2. Casa
 3. PH
@@ -438,10 +460,26 @@ H. 🆘 Ayuda / Soporte técnico
 9. Galpón
 
 Si no estás seguro, envía "paso" (se usa Departamento).<div class="bubble-time">09:14</div></div>
-          <div class="bubble bubble-out">1<div class="bubble-time">09:15 ✓✓</div></div>
-          <div class="bubble bubble-in">Dale, vamos con un Departamento. Decime la dirección completa (calle y altura):<div class="bubble-time">09:15</div></div>
-          <div class="bubble bubble-out">Av. Sucre 1987, Beccar<div class="bubble-time">09:15 ✓✓</div></div>
-          <div class="bubble bubble-in">Perfecto, sigo con algunos datos más y en un rato tenés la valuación con comparables reales de la zona 👍<div class="bubble-time">09:16</div></div>
+              <div class="bubble bubble-out">1<div class="bubble-time">09:15 ✓✓</div></div>
+              <div class="bubble bubble-in">Dale, vamos con un Departamento. Decime la dirección completa (calle y altura):<div class="bubble-time">09:15</div></div>
+              <div class="bubble bubble-out">Av. Sucre 1987, Beccar<div class="bubble-time">09:15 ✓✓</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="phone-caption">3. Recibís tu resultado</p>
+        <div class="phone-mock">
+          <div class="phone-screen">
+            <div class="phone-topbar">
+              <span class="dot"><img src="favicon_512.png" alt="Cierre"></span>
+              Cierre
+            </div>
+            <div class="phone-chat">
+              <div class="bubble bubble-in">Perfecto, sigo con algunos datos más y en un rato tenés la valuación con comparables reales de la zona 👍<div class="bubble-time">09:16</div></div>
+              <div class="bubble bubble-in">📄 Acá tenés tu informe de valuación, con los comparables de la zona y tus datos de contacto ya aplicados.<div class="bubble-time">09:18</div></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -159,7 +159,8 @@
   .phone-mock{background:var(--black);border-radius:32px;padding:14px;max-width:340px;margin:0 auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);}
   .phone-screen{background:#e5ddd5;border-radius:20px;overflow:hidden;}
   .phone-topbar{background:#075e54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;}
-  .phone-topbar .dot{width:34px;height:34px;border-radius:50%;background:#0bcb75;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;color:#fff;font-size:14px;}
+  .phone-topbar .dot{width:34px;height:34px;border-radius:50%;background:#0bcb75;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;color:#fff;font-size:14px;overflow:hidden;flex:none;}
+  .phone-topbar .dot img{width:100%;height:100%;object-fit:cover;}
   .phone-chat{padding:16px 12px;display:flex;flex-direction:column;gap:8px;min-height:300px;}
   .bubble{max-width:88%;padding:9px 12px;border-radius:10px;font-size:12.5px;line-height:1.5;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.08);}
   .bubble-in{background:#fff;border-top-left-radius:2px;align-self:flex-start;color:#111;}
@@ -328,7 +329,7 @@
         <span class="compare-label good">Con Cierre</span>
         <div class="phone-mock">
           <div class="phone-screen">
-            <div class="phone-topbar"><div class="dot">C</div> Cierre</div>
+            <div class="phone-topbar"><div class="dot"><img src="favicon_512.png" alt="Cierre"></div> Cierre</div>
             <div class="phone-chat">
               <div class="bubble bubble-in">🔔 Pendientes de hoy:<br>1) Martín — 48hs de la visita, preguntar si le interesa avanzar<br>2) Familia Ruiz — 30 días de la tasación, informe de mercado</div>
               <div class="bubble bubble-out">Ok, ya le escribo a Martín</div>
@@ -381,7 +382,7 @@
       </div>
       <div class="phone-mock">
         <div class="phone-screen">
-          <div class="phone-topbar"><div class="dot">C</div> Cierre</div>
+          <div class="phone-topbar"><div class="dot"><img src="favicon_512.png" alt="Cierre"></div> Cierre</div>
           <div class="phone-chat">
             <div class="bubble bubble-in">Hola Marcela 👋 Pasaron 30 días desde que tasamos la propiedad de Av. Rivadavia 4200. ¿Querés que te arme un informe de mercado actualizado para mandarle al propietario?</div>
             <div class="bubble bubble-out">Sí, dale</div>
