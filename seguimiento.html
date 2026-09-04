@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seguimiento de cartera — El CRM automático de Cierre por WhatsApp</title>
+<meta name="description" content="Cierre categoriza cada comprador y vendedor de tu cartera, dispara automáticamente la pregunta correcta en el momento correcto y te avisa todos los días a quién contactar. Sin planillas, sin recordatorios manuales.">
+<link rel="icon" type="image/png" href="favicon_512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --green:#0bcb75;
+    --blue:#00608a;
+    --black:#0a0a0a;
+    --gray:#5a5a5a;
+    --gray-light:#8a8a8a;
+    --bg-soft:#f7f7f6;
+    --border:#e7e7e5;
+    --radius:14px;
+    --max:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--black);
+    background:#ffffff;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand-word{
+    font-family:'Baloo 2',system-ui,sans-serif;
+    font-weight:700;
+    line-height:1.18;
+    color:var(--black);
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  ul{list-style:none;}
+  .ico{width:20px;height:20px;display:block;flex:none;}
+  .ico-lg{width:24px;height:24px;}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:15.5px;
+    padding:14px 26px;border-radius:999px;
+    border:none;cursor:pointer;transition:opacity .15s ease, transform .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{opacity:.88;}
+  .btn-primary{background:var(--black);color:#fff;}
+  .btn-outline{background:transparent;color:var(--black);border:1.5px solid var(--border);}
+  .btn-outline:hover{border-color:var(--black);opacity:1;}
+  .btn-whatsapp{background:#25D366;color:#fff;}
+  .btn-whatsapp:hover{background:#1fbd5a;opacity:1;}
+  .btn-sm{padding:10px 20px;font-size:14px;}
+  .accent-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--green),var(--blue));display:inline-block;}
+
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:1320px;padding:0 20px;gap:16px;}
+  .logo-lockup{height:28px;flex:none;}
+  .logo-link{flex:none;display:flex;align-items:center;}
+  nav.mainnav{min-width:0;}
+  nav.mainnav ul{display:flex;gap:20px;align-items:center;flex-wrap:nowrap;}
+  nav.mainnav a{font-weight:600;font-size:13.5px;color:var(--gray);transition:color .15s ease;white-space:nowrap;}
+  nav.mainnav a:hover, nav.mainnav a.active{color:var(--black);}
+  .header-actions{display:flex;align-items:center;gap:10px;flex:none;}
+  .social-icon{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;color:var(--gray);transition:color .15s ease,background .15s ease;flex:none;}
+  .social-icon:hover{color:var(--black);background:var(--bg-soft);}
+  .login-link{color:var(--gray);font-weight:600;font-size:13.5px;white-space:nowrap;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex:none;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--black);margin:5px 0;border-radius:2px;transition:transform .2s ease, opacity .2s ease;}
+  .mobile-panel{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:#fff;z-index:59;overflow-y:auto;padding:8px 24px 40px;}
+  .mobile-panel.open{display:block;}
+  .mobile-panel ul{display:flex;flex-direction:column;}
+  .mobile-panel li{border-bottom:1px solid var(--border);}
+  .mobile-panel a{display:block;padding:18px 4px;font-weight:700;font-size:17px;color:var(--black);}
+  .mobile-panel .mobile-extra{margin-top:22px;display:flex;flex-direction:column;gap:12px;}
+
+  .hero-small{padding:56px 0 30px;position:relative;overflow:hidden;}
+  .hero-small::before{
+    content:"";position:absolute;top:-220px;left:50%;transform:translateX(-50%);
+    width:900px;height:900px;border-radius:50%;
+    background:radial-gradient(circle, rgba(11,203,117,.10) 0%, rgba(0,96,138,.06) 45%, rgba(255,255,255,0) 72%);
+    pointer-events:none;z-index:-1;
+  }
+  .hero-small .wrap{max-width:760px;text-align:center;}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:8px;justify-content:center;}
+  .hero-small h1{font-size:clamp(30px,4vw,46px);letter-spacing:-.5px;}
+  .hero-small h1 .accent-text{background:linear-gradient(100deg,var(--green),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero-small p.lead{margin:18px auto 0;max-width:600px;font-size:17px;color:var(--gray);}
+  .hero-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+
+  .pill-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:40px;}
+  .pill{display:flex;align-items:center;gap:9px;background:var(--bg-soft);border:1px solid var(--border);border-radius:999px;padding:10px 18px;font-size:13.5px;font-weight:600;color:var(--black);}
+  .pill .ico{width:16px;height:16px;color:var(--green);}
+
+  section{padding:76px 0;}
+  .section-head{max-width:640px;margin:0 0 44px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(24px,3.4vw,32px);}
+  .section-head p{margin-top:14px;color:var(--gray);font-size:16px;}
+  .bg-soft{background:var(--bg-soft);}
+
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;max-width:820px;margin:0 auto;}
+  .compare-col{text-align:center;}
+  .compare-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin-bottom:16px;padding:6px 14px;border-radius:999px;}
+  .compare-label.bad{background:#f4f0ee;color:var(--gray-light);}
+  .compare-label.good{background:rgba(11,203,117,.12);color:#079654;}
+  .compare-col.faded .phone-mock{filter:grayscale(1);opacity:.55;}
+
+  .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .products-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+  .product-card{border:1px solid var(--border);border-radius:var(--radius);padding:28px 22px;transition:border-color .15s ease, transform .15s ease;position:relative;}
+  .product-card:hover{border-color:var(--black);transform:translateY(-3px);}
+  .badge-featured{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.02em;background:linear-gradient(100deg,var(--green),var(--blue));color:#fff;padding:4px 10px;border-radius:999px;margin-bottom:14px;}
+  .product-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:var(--bg-soft);color:var(--black);}
+  .product-icon.accent{background:rgba(11,203,117,.1);color:var(--green);}
+  .product-card h3{font-size:17.5px;margin-bottom:8px;}
+  .product-card p{font-size:14px;color:var(--gray);}
+
+  .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .steps{display:flex;flex-direction:column;gap:22px;}
+  .step{display:flex;gap:18px;}
+  .step .num{width:36px;height:36px;border-radius:10px;background:var(--black);color:#fff;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .step h3{font-size:16.5px;margin-bottom:5px;}
+  .step p{font-size:14px;color:var(--gray);}
+  .phone-mock{background:var(--black);border-radius:32px;padding:14px;max-width:340px;margin:0 auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);}
+  .phone-screen{background:#e5ddd5;border-radius:20px;overflow:hidden;}
+  .phone-topbar{background:#075e54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;}
+  .phone-topbar .dot{width:34px;height:34px;border-radius:50%;background:#0bcb75;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;color:#fff;font-size:14px;}
+  .phone-chat{padding:16px 12px;display:flex;flex-direction:column;gap:8px;min-height:300px;}
+  .bubble{max-width:88%;padding:9px 12px;border-radius:10px;font-size:12.5px;line-height:1.5;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.08);}
+  .bubble-in{background:#fff;border-top-left-radius:2px;align-self:flex-start;color:#111;}
+  .bubble-out{background:#d9fdd3;border-top-right-radius:2px;align-self:flex-end;color:#111;}
+  .bubble-time{font-size:10px;color:#999;margin-top:3px;text-align:right;}
+
+  .cadence-table{width:100%;border-collapse:collapse;margin-top:8px;}
+  .cadence-table th,.cadence-table td{text-align:left;padding:14px 16px;font-size:14px;border-bottom:1px solid var(--border);}
+  .cadence-table th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-light);font-weight:700;}
+  .cadence-table td:first-child{font-weight:700;}
+  .cadence-table td.muted{color:var(--gray);}
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);padding:8px 20px;background:#fff;}
+
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{border:1px solid var(--border);border-radius:var(--radius);padding:4px 24px;background:#fff;}
+  .faq-item summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:700;font-size:15.5px;color:var(--black);display:flex;justify-content:space-between;align-items:center;gap:16px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";font-size:22px;font-weight:400;color:var(--gray-light);flex:none;}
+  .faq-item[open] summary::after{content:"\2013";}
+  .faq-item p{padding:0 0 20px;color:var(--gray);font-size:14.5px;line-height:1.7;}
+
+  .cta-final{position:relative;overflow:hidden;}
+  .cta-final::before{
+    content:"";position:absolute;bottom:-260px;left:50%;transform:translateX(-50%);
+    width:900px;height:900px;border-radius:50%;
+    background:radial-gradient(circle, rgba(11,203,117,.10) 0%, rgba(0,96,138,.06) 45%, rgba(255,255,255,0) 72%);
+    pointer-events:none;z-index:-1;
+  }
+  .cta-final.wrap{max-width:var(--max);display:flex;align-items:center;justify-content:space-between;gap:40px;background:var(--bg-soft);border-radius:24px;padding:56px 60px;}
+  .cta-final h2{font-size:clamp(24px,3.4vw,32px);}
+  .cta-final p{margin:14px 0 26px;color:var(--gray);font-size:16px;}
+
+  .page-links{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:36px;}
+
+  footer{border-top:1px solid var(--border);padding:50px 0 26px;}
+  .footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;}
+  .footer-brand{max-width:280px;}
+  .footer-brand-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .footer-brand-row img{width:30px;height:30px;}
+  .footer-brand-row .brand-word{font-size:19px;}
+  .footer-brand p{font-size:13.5px;color:var(--gray-light);}
+  .footer-cols{display:flex;gap:56px;flex-wrap:wrap;}
+  .footer-col h4{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-light);margin-bottom:14px;}
+  .footer-col ul li{margin-bottom:9px;}
+  .footer-col a{font-size:14px;color:var(--gray);transition:color .15s ease;}
+  .footer-col a:hover{color:var(--black);}
+  .footer-bottom{padding-top:22px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--gray-light);}
+
+  @media (max-width:980px){
+    nav.mainnav{display:none;}
+    .menu-toggle{display:block;}
+    .header-actions .btn-outline, .header-actions .login-link, .header-actions .social-icon{display:none;}
+  }
+  @media (max-width:900px){
+    .products-grid{grid-template-columns:repeat(2,1fr);}
+    .how-grid{grid-template-columns:1fr;}
+    .compare-grid{grid-template-columns:1fr;max-width:340px;}
+    .cta-final.wrap{flex-direction:column;text-align:center;padding:44px 28px;}
+  }
+  @media (max-width:760px){
+    .products-grid{grid-template-columns:1fr;}
+    .footer-top{flex-direction:column;}
+    .cadence-table{font-size:13px;}
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo-link" href="index.html#top" aria-label="Cierre">
+      <img class="logo-lockup" src="logo_horizontal_transparent.png" alt="Cierre">
+    </a>
+    <nav class="mainnav">
+      <ul>
+        <li><a href="que-es.html">Qué es</a></li>
+<li><a href="como-funciona.html">Cómo funciona</a></li>
+<li><a href="seguimiento.html" class="active">Seguimiento</a></li>
+<li><a href="asesores.html">Asesores</a></li>
+<li><a href="inmobiliarias.html">Inmobiliarias</a></li>
+<li><a href="index.html#faq">Preguntas frecuentes</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="social-icon" href="https://instagram.com/cierreaiprop" target="_blank" rel="noopener" aria-label="Instagram de Cierre">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+      </a>
+      <a class="login-link" href="https://cierre-bot-production.up.railway.app/panel-login" target="_blank" rel="noopener">Iniciar sesión</a>
+      <a class="btn btn-outline btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20saber%20mas%20sobre%20Cierre" target="_blank" rel="noopener">Contacto</a>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-panel" id="mobilePanel">
+    <nav><ul>
+      <li><a href="que-es.html">Qué es</a></li>
+<li><a href="como-funciona.html">Cómo funciona</a></li>
+<li><a href="seguimiento.html">Seguimiento</a></li>
+<li><a href="asesores.html">Asesores</a></li>
+<li><a href="inmobiliarias.html">Inmobiliarias</a></li>
+<li><a href="index.html#faq">Preguntas frecuentes</a></li>
+    </ul></nav>
+    <div class="mobile-extra">
+      <a class="login-link" href="https://cierre-bot-production.up.railway.app/panel-login" target="_blank" rel="noopener">Iniciar sesión en tu panel</a>
+      <a class="btn btn-whatsapp" style="width:100%;justify-content:center;" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="social-icon" style="align-self:flex-start;" href="https://instagram.com/cierreaiprop" target="_blank" rel="noopener" aria-label="Instagram de Cierre">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+      </a>
+    </div>
+</div>
+<main id="top">
+
+<section class="hero-small">
+  <div class="wrap">
+    <span class="eyebrow"><span class="accent-dot"></span> Distintivo de Cierre</span>
+    <h1>El CRM que <span class="accent-text">nunca se olvida</span> de un contacto</h1>
+    <p class="lead">Cierre no manda un mensaje suelto: arma un seguimiento administrativo completo de cada comprador y cada vendedor de tu cartera, disparado por eventos reales — no por un calendario ciego — para que ninguno se te escape.</p>
+    <div class="hero-cta">
+      <a class="btn btn-whatsapp" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20saber%20mas%20sobre%20el%20seguimiento%20de%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="btn btn-outline" href="#como-funciona-seguimiento">Ver cómo funciona</a>
+    </div>
+    <div class="pill-row">
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Categorización automática</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Avisos diarios por WhatsApp</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 13 disparadores automáticos</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Modo vacaciones</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Notas libres</span>
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">El problema real</span>
+      <h2>Sin seguimiento, un comprador tibio se enfría solo</h2>
+      <p>No es falta de ganas — es que ningún asesor puede acordarse a mano de en qué momento está cada uno de sus 40, 60 u 80 contactos activos.</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col faded">
+        <span class="compare-label bad">Sin Cierre</span>
+        <div class="phone-mock">
+          <div class="phone-screen">
+            <div class="phone-topbar"><div class="dot">📋</div> Planilla de Excel</div>
+            <div class="phone-chat">
+              <div class="bubble bubble-in">Visita a depto de 2 amb. — Martín — "le gustó, dijo que lo iba a pensar"</div>
+              <div class="bubble bubble-in">(sin fecha de seguimiento cargada)</div>
+              <div class="bubble bubble-in">(pestaña olvidada hace 19 días)</div>
+              <div class="bubble bubble-in">Martín ya compró en otro lado.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="compare-col">
+        <span class="compare-label good">Con Cierre</span>
+        <div class="phone-mock">
+          <div class="phone-screen">
+            <div class="phone-topbar"><div class="dot">C</div> Cierre</div>
+            <div class="phone-chat">
+              <div class="bubble bubble-in">🔔 Pendientes de hoy:<br>1) Martín — 48hs de la visita, preguntar si le interesa avanzar<br>2) Familia Ruiz — 30 días de la tasación, informe de mercado</div>
+              <div class="bubble bubble-out">Ok, ya le escribo a Martín</div>
+              <div class="bubble bubble-in">Perfecto, en 5 días te vuelvo a avisar si todavía no cerró</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona-seguimiento">
+  <div class="wrap">
+    <div class="how-grid">
+      <div>
+        <span class="eyebrow"><span class="accent-dot"></span> Cómo funciona</span>
+        <h2 style="font-size:clamp(24px,3.4vw,32px);margin-bottom:8px;">Un motor de eventos, no un calendario ciego</h2>
+        <p style="color:var(--gray);font-size:15px;margin-bottom:30px;">La mayoría de los CRM te recuerdan "llamar en 7 días" sin importar qué pasó en el medio. Cierre reacciona a lo que realmente sucede con cada contacto.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <h3>Cada contacto entra categorizado</h3>
+              <p>Vendedor con tasación en curso, comprador después de una visita, o contacto general de tu cartera — cada categoría tiene su propia lógica de seguimiento.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <h3>Un evento real dispara la siguiente pregunta</h3>
+              <p>Se cumplen 48hs de una visita, pasan 30 días de una tasación, o el asesor marca un cierre — eso es lo que activa el próximo paso, no una fecha fija en un calendario.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <h3>Cierre insiste — con criterio</h3>
+              <p>Si el contacto no responde, Cierre reintenta automáticamente durante 5 días antes de avisarte que hay que llamar. No se rinde al primer silencio, pero tampoco satura al contacto.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <h3>Vos recibís el resumen, no el ruido</h3>
+              <p>Todos los días te llega por WhatsApp la lista de a quién tenés que contactar hoy y por qué — con el contexto ya armado, sin que tengas que revisar nada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-mock">
+        <div class="phone-screen">
+          <div class="phone-topbar"><div class="dot">C</div> Cierre</div>
+          <div class="phone-chat">
+            <div class="bubble bubble-in">Hola Marcela 👋 Pasaron 30 días desde que tasamos la propiedad de Av. Rivadavia 4200. ¿Querés que te arme un informe de mercado actualizado para mandarle al propietario?</div>
+            <div class="bubble bubble-out">Sí, dale</div>
+            <div class="bubble bubble-in">📄 Armando el informe con los comparables de la zona actualizados a hoy... te lo mando en un momento.</div>
+            <div class="bubble bubble-in">Ahí lo tenés. Te vuelvo a avisar en 30 días si la propiedad sigue sin venderse.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">13 disparadores automáticos</span>
+      <h2>Una cadencia distinta para cada momento de la relación</h2>
+      <p>No es un único recordatorio genérico. Cada evento de la cartera dispara la pregunta correcta, en el momento correcto.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="cadence-table">
+        <thead>
+          <tr><th>Quién</th><th>Evento que dispara el mensaje</th><th>Qué hace Cierre</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Vendedor</td><td>Se tasó una propiedad</td><td class="muted">Confirma si el propietario sigue interesado en publicarla</td></tr>
+          <tr><td>Vendedor</td><td>30 días desde la tasación</td><td class="muted">Ofrece armar un informe de mercado actualizado</td></tr>
+          <tr><td>Vendedor</td><td>Se marcó un cierre (venta)</td><td class="muted">Chequeo post-venta a los 7 días</td></tr>
+          <tr><td>Vendedor</td><td>15 días después del cierre</td><td class="muted">Pide referidos</td></tr>
+          <tr><td>Comprador</td><td>48hs después de una visita</td><td class="muted">Pregunta automática con IA sobre interés en avanzar</td></tr>
+          <tr><td>Comprador</td><td>El comprador no respondió</td><td class="muted">Reinsiste durante 5 días antes de avisarte</td></tr>
+          <tr><td>Comprador</td><td>Se marcó como cerrado (compra)</td><td class="muted">Chequeo post-compra a los 7 días</td></tr>
+          <tr><td>Comprador</td><td>15 días después de la compra</td><td class="muted">Pide referidos</td></tr>
+          <tr><td>Comprador</td><td>1 año después de la compra</td><td class="muted">Saluda por aniversario y reabre la conversación</td></tr>
+          <tr><td>Cualquier contacto</td><td>Pasó el tiempo sin novedades</td><td class="muted">Te avisa que está vencido y hay que retomarlo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Pensado para el día a día real</span>
+      <h2>Lo que un asesor necesita, no lo que un CRM de oficina ofrece</h2>
+      <p>Estas funciones nacieron de mirar qué usan los asesores en la práctica — incluyendo ideas que tomamos de otras herramientas del mercado y adaptamos a nuestra arquitectura.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon accent"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Cadencia por categoría</h3>
+        <p>Vendedores, compradores y contactos generales de cartera vieja se siguen con lógicas distintas, ajustadas a cómo evoluciona cada relación.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon accent"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg></div>
+        <h3>Aviso diario de pendientes</h3>
+        <p>Un solo mensaje por WhatsApp cada día con la lista completa de a quién contactar y por qué — no hay que entrar a ningún panel para saber qué hacer hoy.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon accent"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m8 7 4-4 4 4"/><path d="m8 17 4 4 4-4"/></svg></div>
+        <h3>Insistencia automática de 5 días</h3>
+        <p>Si un contacto no responde una pregunta, Cierre vuelve a intentar durante 5 días antes de escalarte el caso — sin que vos tengas que perseguir a nadie manualmente.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon accent"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
+        <h3>Informe de 30 días con IA</h3>
+        <p>A los 30 días de una tasación sin venderse, Cierre le ofrece al vendedor un informe de mercado actualizado, armado automáticamente con comparables reales.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon accent"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></div>
+        <h3>Notas libres por contacto</h3>
+        <p>Sumá una nota o etiqueta de texto libre a cualquier contacto de tu cartera — "prefiere que lo llamen", "familiar de un colega" — y la vas a ver junto al resto de la información.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon accent"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
+        <h3>Carga de cartera vieja</h3>
+        <p>Sumá contactos que ya tenías de antes — cercanos, ocasionales o lejanos — para que también entren en el seguimiento automático de Cierre.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon accent"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><circle cx="12" cy="16" r="2"/></svg></div>
+        <h3>Aniversario del comprador</h3>
+        <p>Al año exacto de una compra, Cierre saluda automáticamente al comprador y reabre la conversación — el momento típico en que aparece un referido o una segunda operación.</p>
+      </div>
+      <div class="product-card product-card-featured" style="grid-column:span 2;display:flex;flex-direction:column;">
+        <span class="badge-featured">Nuevo</span>
+        <div class="product-icon accent"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.3.5-.1 1.1.4 1.4L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.5.9.7 1.4.4l.5-.3c.4-.2.6-.6.5-1.1Z"/></svg></div>
+        <h3>Modo vacaciones</h3>
+        <p>Con un solo comando por WhatsApp, el asesor pausa todos los avisos automáticos — de cartera general, vendedores y compradores por igual — y los retoma cuando vuelve, sin perder el historial ni forzar respuestas mientras está afuera.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Todo sobre el seguimiento de cartera</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Esto reemplaza a un CRM tradicional?</summary>
+        <p>Para la mayoría de los asesores independientes y oficinas chicas, sí — porque no requiere cargar nada a mano. Cierre arma la ficha del contacto y actualiza su estado a partir de lo que ya está haciendo con el bot (tasar, agendar una visita, marcar un cierre), no de una carga manual paralela.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo sabe Cierre a quién contactar cada día?</summary>
+        <p>Cada contacto tiene una fecha de "próximo contacto" que se recalcula automáticamente según su categoría y el último evento registrado. Todos los días, Cierre arma la lista de contactos vencidos o próximos a vencer y te la manda por WhatsApp.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si un comprador o vendedor no contesta?</summary>
+        <p>Cierre reintenta automáticamente durante 5 días. Si en ese lapso no hay respuesta, te lo marca como pendiente para que lo llames vos directamente — no se queda enviando mensajes indefinidamente.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿El seguimiento usa mi número personal de WhatsApp?</summary>
+        <p>No. Todo el seguimiento — el tuyo con Cierre, y el de Cierre con tus compradores y vendedores — corre sobre la API oficial de WhatsApp Business, con un número dedicado. Esto es intencional: automatizar mensajes desde un número personal de WhatsApp viola los términos de servicio de Meta y expone la cuenta a un bloqueo. Con Cierre, tu número personal nunca se toca.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo pausar el seguimiento si me tomo vacaciones?</summary>
+        <p>Sí, con el comando "vacaciones" desde WhatsApp. Pausa todos los avisos automáticos (cartera general, vendedores y compradores) y los retoma cuando vos quieras, sin perder ningún dato ni historial.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo agregar contactos que ya tenía de antes de usar Cierre?</summary>
+        <p>Sí. Con el comando "contacto" podés cargar manualmente tu cartera vieja — cercanos, ocasionales o lejanos — y esos contactos entran también al seguimiento automático.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap cta-final">
+    <div>
+      <h2>Dejá de llevar el seguimiento en tu cabeza</h2>
+      <p>Empezá a usar Cierre hoy y que el seguimiento de tu cartera corra solo, en segundo plano, mientras vos te enfocás en cerrar.</p>
+      <a class="btn btn-whatsapp" href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20empezar%20a%20usar%20Cierre" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-row">
+          <img src="favicon_512.png" alt="Cierre">
+          <span class="brand-word">Cierre</span>
+        </div>
+        <p>El asistente de WhatsApp para asesores inmobiliarios y oficinas. Fichas, valuaciones, posteos, videos y seguimiento de cartera, todo en un chat.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Cierre</h4>
+          <ul>
+            <li><a href="que-es.html">Qué es Cierre</a></li>
+            <li><a href="como-funciona.html">Cómo funciona</a></li>
+            <li><a href="seguimiento.html">Seguimiento de cartera</a></li>
+            <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Para quién</h4>
+          <ul>
+            <li><a href="asesores.html">Asesores</a></li>
+            <li><a href="inmobiliarias.html">Inmobiliarias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="https://wa.me/5491124832755?text=Hola%2C%20quiero%20saber%20mas%20sobre%20Cierre" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://instagram.com/cierreaiprop" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cierre. Todos los derechos reservados.</span>
+      <span>Buenos Aires, Argentina</span>
+      <a href="https://cierre-bot-production.up.railway.app/soporte" target="_blank" rel="noopener" style="color:var(--gray-light);font-size:11.5px;opacity:.6;text-decoration:none;">&#128274; Exclusivo empleados Cierre</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var panel = document.getElementById('mobilePanel');
+  if(!toggle || !panel) return;
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.classList.toggle('is-open', open);
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+</body>
+</html>
