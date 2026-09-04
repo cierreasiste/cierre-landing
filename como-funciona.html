@@ -224,15 +224,15 @@
   .step .num{width:36px;height:36px;border-radius:10px;background:var(--black);color:#fff;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex:none;}
   .step h3{font-size:16.5px;margin-bottom:5px;}
   .step p{font-size:14px;color:var(--gray);}
-  .phone-mock{background:var(--black);border-radius:32px;padding:14px;max-width:340px;margin:0 auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);}
-  .phone-screen{background:#e5ddd5;border-radius:20px;overflow:hidden;}
-  .phone-topbar{background:#075e54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;}
+  .phone-mock{width:270px;height:560px;background:#1a1a1a;border-radius:46px;padding:10px;margin:0 auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);position:relative;flex:none;box-sizing:border-box;}
+  .phone-mock::before{content:'';position:absolute;top:24px;left:50%;transform:translateX(-50%);width:80px;height:22px;background:#1a1a1a;border-radius:12px;z-index:3;}
+  .phone-screen{background:#e5ddd5;border-radius:36px;overflow:hidden;height:100%;display:flex;flex-direction:column;position:relative;}
+  .phone-topbar{background:#075e54;color:#fff;padding:30px 16px 12px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;flex:none;}
   .phone-topbar .dot{width:34px;height:34px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;color:#fff;font-size:14px;overflow:hidden;flex:none;padding:5px;box-sizing:border-box;}
   .phone-topbar .dot img{width:100%;height:100%;object-fit:contain;}
-  .phone-chat{padding:16px 12px;display:flex;flex-direction:column;gap:8px;min-height:360px;}
-  .phones-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;align-items:start;}
+  .phone-chat{padding:16px 12px;display:flex;flex-direction:column;gap:8px;flex:1;overflow-y:auto;}
+  .phones-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;align-items:start;justify-items:center;}
   .phones-row .phone-mock{max-width:none;}
-  .phones-row .phone-chat{min-height:300px;}
   .phone-caption{text-align:center;font-size:13.5px;color:var(--gray);font-weight:700;margin-bottom:14px;}
   .bubble{max-width:84%;padding:9px 12px;border-radius:10px;font-size:13px;line-height:1.5;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.08);}
   .bubble-in{background:#fff;border-top-left-radius:2px;align-self:flex-start;color:#111;}
