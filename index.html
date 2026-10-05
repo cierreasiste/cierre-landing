@@ -298,6 +298,15 @@
   }
 
 
+
+  /* Pulido visual (oct 2026) */
+  .product-icon{width:46px;height:46px;border-radius:12px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:14px;transition:background .2s ease,color .2s ease;}
+  .product-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+  .product-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(10,10,10,.07);border-color:#d6d6d3;}
+  .product-card:hover .product-icon{background:var(--green);color:#fff;}
+  .hero{background:linear-gradient(180deg,#f2fbf6 0%,#ffffff 75%);}
+  .btn-whatsapp{box-shadow:0 6px 16px rgba(11,203,117,.25);}
+  @media (prefers-reduced-motion:reduce){.product-card,.product-icon{transition:none;}.product-card:hover{transform:none;}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5044ZZRJ8X"></script>
