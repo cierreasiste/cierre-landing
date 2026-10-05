@@ -307,7 +307,15 @@
   .hero{background:linear-gradient(180deg,#f2fbf6 0%,#ffffff 75%);}
   .btn-whatsapp{box-shadow:0 6px 16px rgba(11,203,117,.25);}
   @media (prefers-reduced-motion:reduce){.product-card,.product-icon{transition:none;}.product-card:hover{transform:none;}}
-</style>
+
+    /* Pulido 2 (oct 2026) */
+    .page-links a{display:inline-flex;align-items:center;gap:6px;font-weight:700;padding:12px 22px;border:1.5px solid var(--border);border-radius:999px;color:var(--black);transition:border-color .2s ease,transform .2s ease;}
+    .page-links a:hover{border-color:var(--black);transform:translateY(-1px);}
+    .products-grid > *{transition:transform .2s ease,box-shadow .2s ease;}
+    .products-grid > *:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(10,10,10,.07);}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px;}
+    @media (prefers-reduced-motion:reduce){.page-links a,.products-grid > *{transition:none;}.page-links a:hover,.products-grid > *:hover{transform:none;}}
+  </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5044ZZRJ8X"></script>
 <script>
