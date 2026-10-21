@@ -97,6 +97,7 @@
   nav.mainnav ul{display:flex;gap:20px;align-items:center;flex-wrap:nowrap;}
   nav.mainnav a{font-weight:600;font-size:13.5px;color:var(--gray);transition:color .15s ease;white-space:nowrap;}
   nav.mainnav a:hover, nav.mainnav a.active{color:var(--black);}
+  @media (max-width:1240px){nav.mainnav{display:none;}.menu-toggle{display:block;}.header-actions .btn-outline,.header-actions .login-link,.header-actions .social-icon{display:none;}}
   .header-actions{display:flex;align-items:center;gap:10px;flex:none;}
   .social-icon{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;color:var(--gray);transition:color .15s ease,background .15s ease;flex:none;}
   .social-icon:hover{color:var(--black);background:var(--bg-soft);}
