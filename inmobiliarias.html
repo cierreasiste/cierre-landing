@@ -501,8 +501,8 @@
         <span class="badge-featured">Ya funciona</span>
         <div class="product-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
   <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></svg></div>
-        <h3>El doble de posteos y videos</h3>
-        <p>Pagás menos que sumando un plan individual por cada agente ($1.000 menos por asesor, $2.000 en Top), con el doble de posteos y de videos para el equipo, más el panel de control. Se hacen desde el panel web, con un solo cupo compartido.</p>
+        <h3>Más barato que planes sueltos</h3>
+        <p>Pagás menos que sumando un plan individual por cada agente ($1.000 menos por asesor en cada plan), con las mismas cantidades de cada plan individual multiplicadas por la cantidad de asesores, más el panel de control. Se hacen desde el panel web, con un solo cupo compartido.</p>
       </div>
       <div class="product-card">
         <span class="badge-featured">Ya funciona</span>
@@ -802,9 +802,9 @@
   var labelAnual = document.querySelector('[data-toggle-label-of="anual"]');
 
   var PLANES = {
-    base: { a: 0, b: 11000, cupos: { fichas: 25, tasaciones: 0, cuestionarios: 15, posteos: 30, videos: 10 }, wa: 'Oficina%20Base' },
-    popular: { a: 0, b: 13000, cupos: { fichas: 30, tasaciones: 0, cuestionarios: 20, posteos: 40, videos: 20 }, wa: 'Oficina%20Popular' },
-    top: { a: 0, b: 18000, cupos: { fichas: 45, tasaciones: 0, cuestionarios: 25, posteos: 60, videos: 30 }, wa: 'Oficina%20Top' }
+    base: { a: 0, b: 11000, cupos: { fichas: 25, tasaciones: 0, cuestionarios: 15, posteos: 15, videos: 5 }, wa: 'Oficina%20Base' },
+    popular: { a: 0, b: 13000, cupos: { fichas: 30, tasaciones: 0, cuestionarios: 20, posteos: 20, videos: 10 }, wa: 'Oficina%20Popular' },
+    top: { a: 0, b: 18000, cupos: { fichas: 45, tasaciones: 0, cuestionarios: 25, posteos: 30, videos: 15 }, wa: 'Oficina%20Top' }
   };
 
   function fmt(n){ return '$' + Math.round(n).toLocaleString('es-AR'); }
